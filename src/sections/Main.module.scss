@@ -1,0 +1,27 @@
+.main {
+  border: 1px solid red;
+  position: relative;
+
+  .title{
+    text-align: center;
+    margin: 0 auto;
+    margin-block: 130px 160px;
+    max-width: 920px;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 350px;
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 55.01%);
+  }
+}
+
+.img {
+  width: 1100px;
+  margin: 0 auto;
+}

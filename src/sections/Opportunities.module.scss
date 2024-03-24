@@ -1,0 +1,29 @@
+.header{
+    margin-bottom: 34px;
+    h4{
+        color: #7876FF;
+        margin-bottom: 24px;
+    }
+    h2{
+        max-width: 560px;
+    }
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    max-height: 650px;
+    gap: 50px;
+    .points{
+        max-width: 650px;
+        li{
+            padding-bottom: 80px;
+            h4{
+                margin-bottom: 24px;
+            }
+        }
+    }
+}
+.img{
+    max-width: 62vw;
+}
