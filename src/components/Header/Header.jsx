@@ -6,6 +6,7 @@ export const Header = () => {
     <header>
       <nav className={styles.nav}>
         <img src="" alt="logo" />
+        {/* TODO */}
         <ul className={styles.ul}>
           <li>
             <a href="#" className={styles.link}>

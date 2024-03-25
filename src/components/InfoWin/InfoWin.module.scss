@@ -31,33 +31,8 @@
     max-height: 410px;
     display: grid;
     gap: 8px;
-
-    li {
-      max-height: 96px;
-      place-items: center;
-      border-radius: 16px 16px 10px 10px;
-      background-color: #f8f8fe;
-      padding: 16px;
-      display: flex;
-      gap: 19px;
-      font-size: 19px;
-      p {
-        margin: 0;
-      }
-      img {
-        max-width: 64px;
-      }
-    }
   }
 
-  a {
-    display: block;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 10px 10px 24px 24px;
-    box-shadow: 0px 15px 64px 0px rgba(49, 46, 233, 0.25);
-  }
 
   h3,
   h4,

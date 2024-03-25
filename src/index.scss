@@ -5,7 +5,7 @@
   --background: #000;
   --bg-shadow: #312ee940;
 
-  font-family:"Suisse Intl", Arial, Helvetica, sans-serif;
+  font-family: "Suisse Intl", Arial, Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-size: 20px;
@@ -99,14 +99,26 @@ h5 {
 }
 
 .btn {
-  background: var(--accent);
-  padding: 0.6rem 1.2rem;
-  color: var(--white);
-  border-radius: 0.5rem;
-  border: 1px solid transparent;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  font-family: inherit;
   cursor: pointer;
+  color: var(--white);
+  background: var(--accent);
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-size: 20px;
+  font-family: inherit;
+  padding: 16px 24px;
   box-shadow: 0px 15px 64px 0px var(--bg-shadow);
+  transition: all 0.3s ease;
+}
+.btn--modified {
+  padding: 20px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px 10px 24px 24px;
+  box-shadow: 0px 15px 64px 0px rgba(49, 46, 233, 0.25);
+}
+#root{
+  display: grid;
+  gap: 130px;
 }
