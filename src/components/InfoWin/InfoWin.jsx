@@ -1,8 +1,7 @@
 import React from "react";
-import Camera from "../../assets/camera.webp";
+import { InfoCard } from "../InfoCard/InfoCard";
 
 import styles from "./InfoWin.module.scss";
-import { InfoCard } from "../InfoCard/InfoCard";
 
 export const InfoWin = () => {
   return (
