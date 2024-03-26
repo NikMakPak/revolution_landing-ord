@@ -1,52 +1,56 @@
 import React from "react";
+import Logo from '../../assets/logo.svg'
+import TgIcon from '../../assets/tg.svg'
+import WhIcon from '../../assets/whapp.svg'
+
 import styles from "./Header.module.scss";
 
 export const Header = () => {
   return (
     <header>
       <nav className={styles.nav}>
-        <img src="" alt="logo" />
+        <a href="#">
+          <img src={Logo} alt="logo" />
+        </a>
         {/* TODO */}
         <ul className={styles.ul}>
           <li>
+            <a href="#">Главная</a>
+          </li>
+          <li>
             <a href="#" className={styles.link}>
-              Главная
+              Возможности
             </a>
           </li>
           <li>
             <a href="#" className={styles.link}>
-              Главная
+              Сценарии
             </a>
           </li>
           <li>
             <a href="#" className={styles.link}>
-              Главная
+              Калькулятор
             </a>
           </li>
           <li>
             <a href="#" className={styles.link}>
-              Главная
+              Контакты
             </a>
           </li>
           <li>
             <a href="#" className={styles.link}>
-              Главная
-            </a>
-          </li>
-          <li>
-            <a href="#" className={styles.link}>
-              Главная
+              Интернет-магазин
             </a>
           </li>
         </ul>
         <div className={styles.contacts}>
           <button className={"btn"}>Позвонить</button>
           <div className={styles.socials}>
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              tg
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src={TgIcon} alt="Telegram icon" />
             </a>
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              wa
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src={WhIcon} alt="Whatsapp icon" />
             </a>
           </div>
         </div>

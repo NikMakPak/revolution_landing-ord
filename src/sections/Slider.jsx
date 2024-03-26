@@ -8,7 +8,7 @@ export const Slider = () => {
   return (
     <section>
         <img className={styles.img} src={Slide1} alt="" />
-        {/* <InfoWin/> */}
+        <InfoWin/>
     </section>
   )
 }

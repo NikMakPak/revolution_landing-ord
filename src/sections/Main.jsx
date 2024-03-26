@@ -9,7 +9,7 @@ export const Main = () => {
     <main className={styles.main}>
       <Header/>
       <div className={styles.title}>
-        <h4 className="caption">Smart Revolution</h4>
+        <p>Smart Revolution</p>
         <h1>Незабываемые перемены для вашего комфорта</h1>
         <button className="btn">Узнать больше</button>
       </div>

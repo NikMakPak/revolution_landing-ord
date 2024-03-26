@@ -1,19 +1,30 @@
-.nav{
-    border:1px solid #fff;
+.nav {
+  display: flex;
+  place-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #000 -95%, transparent 100%);
+
+  button {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.53px;
+    letter-spacing: -0.02em;
+    text-align: left;
+  }
+}
+.ul {
+  display: flex;
+  gap: 32px;
+}
+.contacts {
+  gap: 16px;
+  display: flex;
+  .socials {
     display: flex;
+    gap: 8px;
     place-items: center;
-    justify-content: space-between;
+  }
 }
-.ul{
-    display: flex;
-    gap: 32px;
-}
-.contacts{
-    gap: 16px;
-    display: flex;
-    .socials{
-        display: flex;
-        gap: 8px;
-        place-items: center;
-    }
+.link {
+  opacity: 0.5;
 }
