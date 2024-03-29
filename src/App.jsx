@@ -3,6 +3,7 @@ import { Main } from './sections/Main'
 import { Opportunities } from './sections/Opportunities'
 import { Slider } from './sections/Slider'
 import { Scenarios } from './sections/Scenarios'
+import { QA } from './sections/QA'
 function App() {
   return (
     <>
@@ -10,6 +11,7 @@ function App() {
     <Opportunities/>
     <Slider/>
     <Scenarios/>
+    <QA/>
     </> 
   )
 }
