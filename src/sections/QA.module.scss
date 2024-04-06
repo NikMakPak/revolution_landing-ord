@@ -1,0 +1,9 @@
+.flexContainer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  img {
+    flex: 1;
+    width: 790px;
+  }
+}

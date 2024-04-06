@@ -7,8 +7,8 @@ import styles from "./Header.module.scss";
 
 export const Header = () => {
   return (
-    <header>
-      <nav className={styles.nav}>
+    <header className={styles.header}>
+      <nav>
         <a href="#">
           <img src={Logo} alt="logo" />
         </a>

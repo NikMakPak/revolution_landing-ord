@@ -17,6 +17,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+p,
+a,
+ul,
+div,
+aside,
+input,
+select,
+button {
+  box-sizing: border-box;
+}
+
 *::before,
 *::after {
   padding: 0;
@@ -64,7 +75,6 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--white);
   margin: 0;
   padding: 0;
 }
@@ -108,12 +118,13 @@ h5 {
   font-family: inherit;
   padding: 0.7em 1.2em;
   box-shadow: 0px 15px 64px 0px var(--bg-shadow);
-  transition: all .3s ease;
-  &:hover{
-    opacity: .8;
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 0.8;
   }
 }
 .btn--modified {
+  width: 100%;
   padding: 20px;
   display: block;
   text-align: center;
@@ -133,8 +144,8 @@ a {
   line-height: 18.53px;
   letter-spacing: -0.02em;
   text-align: left;
-   transition: all 0.3s ease;
-  &:hover{
+  transition: all 0.3s ease;
+  &:hover {
     opacity: 1;
   }
 }

@@ -4,10 +4,9 @@ import * as Yup from "yup";
 
 import styles from "./SubmitForm.module.scss";
 
-// Валидационная схема с помощью Yup
 const validationSchema = Yup.object({
   name: Yup.string().required("Обязательное поле"),
-  phone: Yup.string().required("Обязательное поле"),
+  phone: Yup.number().required("Обязательное поле"),
   select: Yup.string().required("Обязательное поле"),
   checkbox: Yup.boolean().oneOf(
     [true],
@@ -17,9 +16,11 @@ const validationSchema = Yup.object({
 
 export const SubmitForm = () => {
   return (
-    <div>
-      <h3>Остались вопросы?</h3>
-      <p>Незабываемые перемены для вашего комфорта</p>
+    <div className={styles.wrapper}>
+      <header>
+        <h3>Остались вопросы?</h3>
+        <p>Незабываемые перемены для вашего комфорта</p>
+      </header>
       <Formik
         initialValues={{
           name: "",
@@ -35,41 +36,38 @@ export const SubmitForm = () => {
       >
         {({ isSubmitting, errors, touched }) => (
           <Form>
-            <div>
-              <label htmlFor="name">Имя</label>
+            <div className={styles.Input}>
               <Field
                 type="text"
                 name="name"
                 placeholder="Ваше имя"
-                className={errors.name && touched.name ? styles.error : ""}
+                className={`${styles.Input} ${
+                  errors.name && touched.name ? styles.error : ""
+                }`}
               />
-              <ErrorMessage name="name" component="div" />
             </div>
-            <div>
-              <label htmlFor="phone">Телефон</label>
+            <div className={styles.Input}>
+              {/* todo маска телефона */}
               <Field
-                type="text"
+                type="tel"
                 name="phone"
                 placeholder="Номер телефона"
                 className={errors.phone && touched.phone ? styles.error : ""}
               />
-              <ErrorMessage name="phone" component="div" />
             </div>
-            <div>
-              <label htmlFor="select">Выберите</label>
+            <div className={styles.Input}>
               <Field
                 as="select"
                 name="select"
                 placeholder="Предпочитаемый способ связи"
                 className={errors.select && touched.select ? styles.error : ""}
               >
-                <option value="">Выберите...</option>
+                <option value="">Предпочитаемый способ связи</option>
                 <option value="option1">Пункт 1</option>
                 <option value="option2">Пункт 2</option>
               </Field>
-              <ErrorMessage name="select" component="div" />
             </div>
-            <div>
+            <div className={styles.Checkbox}>
               <Field type="checkbox" name="checkbox" />
               <label htmlFor="checkbox">
                 Я согласен на{" "}
@@ -77,9 +75,17 @@ export const SubmitForm = () => {
                   обработку персональных данных
                 </a>
               </label>
-              <ErrorMessage name="checkbox" component="div" />
+              <ErrorMessage
+                name="checkbox"
+                component="div"
+                className={styles.errMsg}
+              />
             </div>
-            <button type="submit" disabled={isSubmitting}>
+            <button
+              className="btn btn--modified"
+              type="submit"
+              disabled={isSubmitting}
+            >
               Отправить
             </button>
           </Form>
