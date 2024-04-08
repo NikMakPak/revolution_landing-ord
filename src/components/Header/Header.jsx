@@ -12,7 +12,6 @@ export const Header = () => {
         <a href="#">
           <img src={Logo} alt="logo" />
         </a>
-        {/* TODO */}
         <ul className={styles.ul}>
           <li>
             <a href="#">Главная</a>

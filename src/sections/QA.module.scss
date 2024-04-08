@@ -4,6 +4,14 @@
   flex-wrap: wrap;
   img {
     flex: 1;
+    object-fit: cover;
     width: 790px;
   }
 }
+.qaHeader{
+    display: flex;
+    flex: 1;
+    h3{
+      max-width: 619px;
+    }
+  }
