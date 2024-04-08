@@ -9,15 +9,19 @@
     line-height: 25.2px;
     letter-spacing: -0.02em;
     color: #98ffe0;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
   .block {
     margin-bottom: 64px;
     h2 {
       max-width: 675px;
     }
-    p {
+    h5,h6 {
       opacity: 0.5;
+      margin-bottom: 2em;
+    }
+    a{
+      font-size: 40px;
     }
   }
   .exitOfficeWrapper {
@@ -43,6 +47,7 @@
   .shop {
     border-top: 1px solid #1d1d2a;
     padding-top: 24px;
+    margin-top: 20px;
     h2 {
       font-size: 24px;
     }
@@ -52,9 +57,13 @@
     .shopWrapper {
       display: flex;
       justify-content: space-between;
+      .block a{
+        font-size: 24px;
+      }
     }
   }
 }
+
 .footer {
   opacity: 0.5;
   font-size: 18px;

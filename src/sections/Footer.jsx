@@ -11,16 +11,16 @@ export const Footer = () => {
         <div>
           <h4>Центральный офис</h4>
           <div className={styles.block}>
-            <p>Адрес</p>
+            <h5>Адрес</h5>
             <h2>г. Москва, башня Федерация, офис 104</h2>
           </div>
           <div className={styles.block}>
-            <p>Телефон</p>
-            <h3>+7 (999) 999-99-99</h3>
+            <h5>Телефон</h5>
+            <a href="tel:+79999999999">+7 (999) 999-99-99</a>
           </div>
           <div className={styles.block}>
-            <p>Email</p>
-            <h3>contact@smrev.ru</h3>
+            <h5>Email</h5>
+            <a href="mailto:contact@smrev.ru">contact@smrev.ru</a>
           </div>
         </div>
         <div>
@@ -40,8 +40,8 @@ export const Footer = () => {
             <div className={styles.shopWrapper}>
               <div>
                 <div className={styles.block}>
-                  <p>Телефон</p>
-                  <h2>+7 (999) 999-99-99</h2>
+                  <h6>Email</h6>
+                  <a href="tel:+79999999999">+7 (999) 999-99-99</a>
                 </div>
                 <a href="">
                   <img src={Map} alt="map" />
@@ -49,12 +49,12 @@ export const Footer = () => {
               </div>
               <div>
                 <div className={styles.block}>
-                  <p>Телефон</p>
-                  <h2>+7 (999) 999-99-99</h2>
+                  <h6>Телефон</h6>
+                  <a href="mailto:contact@smrev.ru">contact@smrev.ru</a>
                 </div>
                 <div className={styles.contacts}>
                   <p>Заявка через телеграмм-бота</p>
-                  <a href="#">
+                  <a href="https://t.me/smrev_demo_bot">
                     <img src={TgIcon} alt="Telegram icon" />
                     @smrev_demo_bot
                   </a>
