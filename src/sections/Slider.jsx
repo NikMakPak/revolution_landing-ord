@@ -2,13 +2,11 @@ import React from "react";
 import Slide1 from "../assets/img1-slide.webp";
 import { Slide } from "../components/Slide/Slide";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useSwiper } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Controls from "../components/SliderNav/Controls";
+
 import "swiper/scss";
 import "swiper/scss/pagination";
-import "swiper/scss/navigation";
-import { Pagination } from "swiper/modules";
-import { Navigation } from "swiper/modules";
-
 import styles from "./Slider.module.scss";
 
 export const Slider = () => {
@@ -21,21 +19,19 @@ export const Slider = () => {
 
   return (
     <>
-      {/* <button onClick={() => swiper.slideNext()}>
-        Slide to the next slide
-      </button> */}
       <Swiper
-        pagination={pagination}
-        modules={[Pagination, Navigation]}
         className="mySwiper"
-        keyboard={{
-          enabled: true,
-        }}
+        loop={true}
+        spaceBetween={30}
+        centeredSlides={true}
+        pagination={pagination}
+        keyboard={{ enabled: true }}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         }}
-        navigation={true}
+        modules={[Autoplay, Pagination, Navigation]}
       >
         <SwiperSlide>
           <Slide imgSrc={Slide1} />
@@ -46,6 +42,7 @@ export const Slider = () => {
         <SwiperSlide>
           <Slide imgSrc={Slide1} />
         </SwiperSlide>
+        <Controls />
       </Swiper>
     </>
   );
