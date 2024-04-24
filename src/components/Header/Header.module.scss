@@ -3,6 +3,7 @@
     display: flex;
     place-items: center;
     justify-content: space-between;
+    gap: 20px;
     background: linear-gradient(180deg, #000 -95%, transparent 100%);
 
     button {
@@ -15,7 +16,10 @@
   }
   .ul {
     display: flex;
-    gap: 32px;
+    justify-content: space-between;
+    width: 50vw;
+    min-width: 630px;
+    max-width: 1000px;
   }
   .contacts {
     gap: 16px;

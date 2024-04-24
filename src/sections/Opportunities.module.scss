@@ -1,5 +1,5 @@
 .header{
-    margin-bottom: 34px;
+    margin-bottom: 60px;
     h4{
         color: #7876FF;
         margin-bottom: 24px;
@@ -12,10 +12,12 @@
 .wrapper{
     display: flex;
     justify-content: space-between;
-    max-height: 650px;
-    gap: 50px;
+    flex-wrap: wrap;
+    column-gap: 50px;
     .points{
-        max-width: 650px;
+        flex: 0.5;
+        // max-width: 650px;
+        min-width: 400px;
         li{
             padding-bottom: 80px;
             h4{
@@ -25,5 +27,7 @@
     }
 }
 .img{
-    max-width: 62vw;
+    width: 100%;
+    min-width: 719px;
+    flex:1;
 }
