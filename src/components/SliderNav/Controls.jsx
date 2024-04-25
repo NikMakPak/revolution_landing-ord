@@ -19,9 +19,9 @@ export default function Controls({cl}) {
           <path
             d="M6.8125 1.375L1.1875 7L6.8125 12.625"
             stroke="white"
-            stroke-width="1.875"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.875"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </button>
@@ -36,9 +36,9 @@ export default function Controls({cl}) {
           <path
             d="M1.1875 1.375L6.8125 7L1.1875 12.625"
             stroke="white"
-            stroke-width="1.875"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.875"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </button>
