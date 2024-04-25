@@ -5,10 +5,35 @@
   text-align: center;
   max-width: 1130px;
   margin: 0 auto ;
-
+position: relative;
   p{
     color: #848487;
   }
+}
+
+.controls{
+position: absolute;
+top: 16px;
+right: 24px;
+button {
+font-size: 14px;
+border-radius: 10px;
+}
+}
+
+.disBtn{
+  cursor: pointer;
+  color: var(--white);
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-family: inherit;
+  padding: 0.7em 1.2em;
+  background-color: #49494E;
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 0.8;
+  }
+  margin-right: 12px;
 }
 .flex {
   display: flex;

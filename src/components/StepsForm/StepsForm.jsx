@@ -30,7 +30,7 @@ export const StepsForm = ({ step, increment, subStep, decrement }) => {
         {() => (
           <Form className={styles.formBg}>
             <p>Заполните информацию о проекте</p>
-            <div style={{ maxWidth: "905px", margin: '0 auto' }}>
+            <div style={{ maxWidth: "905px", margin: "0 auto" }}>
               <div className={styles.flex} style={{ marginBottom: "16px" }}>
                 <div className={styles.Input}>
                   <Field type="text" name="city" placeholder="Введите город" />
@@ -99,12 +99,17 @@ export const StepsForm = ({ step, increment, subStep, decrement }) => {
                 </label>
               </div>
             </div>
+            <div className={styles.controls}>
+              <button className={styles.disBtn} onClick={decrement}>
+                Назад
+              </button>
+              <button className="btn" onClick={increment}>
+                Далее
+              </button>
+            </div>
           </Form>
         )}
       </Formik>
-
-      {/* <button onClick={decrement}>Назад</button>
-      <button onClick={increment}>Вперед</button> */}
     </>
   );
 };
