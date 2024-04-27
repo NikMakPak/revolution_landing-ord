@@ -12,7 +12,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 9px;
-  justify-content: space-between;
+  justify-content: center;
 
   input[type="radio"] {
     display: none;
@@ -24,7 +24,7 @@
 }
 
 .cardImg,
-input {
+input, .card {
   background-color: #323236;
   color: #e3e3e3;
   outline: none;
@@ -36,18 +36,30 @@ input {
   transition: border, background-color 0.3s ease;
 }
 
-.cardImg {
+.cardImg, .card {
+padding: 20px;
   cursor: pointer;
+  p{
+    margin: 0;
+  }
+  &:hover {
+    background-color: #404045;
+  }
+}
+
+.cardImg{
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 16px;
-  padding: 40px;
   flex: 1;
-  &:hover {
-    background-color: #404045;
-  }
+}
+
+
+.card{
+
 }
 
 .Input {

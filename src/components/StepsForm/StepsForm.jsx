@@ -18,16 +18,13 @@ export const StepsForm = ({ step, increment, subStep, decrement, item }) => {
   ];
 
   const handleSubmit = (values) => {
-    console.log("Город:", values.city);
-    console.log("Район:", values.district);
-    console.log("Выбранная начинка:", values.roomType);
-    console.log("Выбранная билд:", values.buildingStep);
+    console.log(values);
 };
 
   return (
     <>
       <Formik
-        initialValues={{ city: "", district: "", roomType: "", buildingStep: "" }}
+        initialValues={{ city: "", district: "", roomType: "", buildingStep: "", square: "" }}
         onSubmit={handleSubmit}
       >
         {() => (

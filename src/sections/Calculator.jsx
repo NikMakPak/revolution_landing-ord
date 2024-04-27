@@ -79,6 +79,33 @@ export const Calculator = () => {
     );
   };
 
+  const ObjectSquere = () => {
+    const validate = (num) => {
+
+    }
+    return (
+      <>
+        <p>Заполните информацию о проекте</p>
+        <div style={{ maxWidth: "905px", margin: "0 auto" }}>
+          <div
+            className={styles.flex}
+            style={{ marginBottom: "16px" }}
+          >
+            <div className={styles.Input}>
+              <Field
+                type="number"
+                name="square"
+                placeholder="Площадь объекта, от 11 до 500 м2"
+            min={11}
+            max={500}
+              />
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  };
+
   const BuildStep = () => {
     return (
       <>
@@ -86,23 +113,23 @@ export const Calculator = () => {
         <div style={{ maxWidth: "840px", margin: "0 auto" }}>
          <div className={styles.flex}>
             <Field type="radio" id="design" name="buildingStep" value="design" />
-            <label htmlFor="design" className={styles.cardImg}>
+            <label htmlFor="design" className={styles.card}>
               <p>Проектирование</p>
             </label>
             <Field type="radio" id="roughFinish" name="buildingStep" value="roughFinish" />
-            <label htmlFor="roughFinish" className={styles.cardImg}>
+            <label htmlFor="roughFinish" className={styles.card}>
               <p>Черновая отделка</p>
             </label>
             <Field type="radio" id="finalFinish" name="buildingStep" value="finalFinish" />
-            <label htmlFor="finalFinish" className={styles.cardImg}>
+            <label htmlFor="finalFinish" className={styles.card}>
               <p>Чистовая отделка</p>
             </label>
             <Field type="radio" id="finishRepair" name="buildingStep" value="finishRepair" />
-            <label htmlFor="finishRepair" className={styles.cardImg}>
+            <label htmlFor="finishRepair" className={styles.card}>
               <p>Ремонт окончен</p>
             </label>
             <Field type="radio" id="living" name="buildingStep" value="living" />
-            <label htmlFor="living" className={styles.cardImg}>
+            <label htmlFor="living" className={styles.card}>
               <p>Проживание</p>
             </label>
           </div>
@@ -119,7 +146,7 @@ export const Calculator = () => {
         case 2:
           return { title: "Этап строительства", item: <BuildStep/> };
         case 3:
-          return { title: "Площадь объекта", item: null };
+          return { title: "Площадь объекта", item: <ObjectSquere/> };
         default:
           return { title: "Информация о проекте", item: null };
       }
