@@ -1,12 +1,11 @@
-.header{
-    text-align: center;
-    margin-bottom: 95px;
-    h4{
-        color: #98FFE0;
-        margin-bottom: 24px;
-    }
+.header {
+  text-align: center;
+  margin-bottom: 95px;
+  h4 {
+    color: #98ffe0;
+    margin-bottom: 24px;
+  }
 }
-
 
 .flex {
   display: flex;
@@ -24,7 +23,9 @@
 }
 
 .cardImg,
-input, .card {
+input,
+.card,
+select {
   background-color: #323236;
   color: #e3e3e3;
   outline: none;
@@ -36,10 +37,11 @@ input, .card {
   transition: border, background-color 0.3s ease;
 }
 
-.cardImg, .card {
-padding: 20px;
+.cardImg,
+.card {
+  padding: 20px;
   cursor: pointer;
-  p{
+  p {
     margin: 0;
   }
   &:hover {
@@ -47,7 +49,7 @@ padding: 20px;
   }
 }
 
-.cardImg{
+.cardImg {
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -57,9 +59,47 @@ padding: 20px;
   flex: 1;
 }
 
+ .steps {
+  margin: 0 auto;
+  max-width: 905px;
+  padding-inline: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.card{
+  .circle {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    background: #1A1A1D;
 
+  }
+
+  .line{
+    width: 100%;
+    height: 1px;
+    background: #1A1A1D;
+
+  }
+
+  .active{
+    background: var(--accent);
+  }
+}
+.stepTitle{
+  p{
+    width: 304px;
+    text-align: center;
+  }
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-bottom: 70px;
 }
 
 .Input {
@@ -74,5 +114,9 @@ padding: 20px;
   }
   input:focus {
     border: 1px solid #9a9ad4;
+  }
+  select {
+    padding: 20px;
+    width: 100%;
   }
 }

@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { StepsForm } from "../components/StepsForm/StepsForm";
 import Steps from "../assets/steps.png";
-import { Formik, Form, Field } from "formik";
+import { Field } from "formik";
 
 import styles from "./Calculator.module.scss";
 
 export const Calculator = () => {
+  const [step, setStep] = useState(1);
+  const [subStep, setSubStep] = useState(1);
+
   const RoomType = () => {
     return (
       <>
@@ -79,25 +82,70 @@ export const Calculator = () => {
     );
   };
 
-  const ObjectSquere = () => {
-    const validate = (num) => {
-
-    }
+  const Specifications = () => {
     return (
       <>
-        <p>Заполните информацию о проекте</p>
+        <p>Выберите нужные спецификации</p>
         <div style={{ maxWidth: "905px", margin: "0 auto" }}>
-          <div
-            className={styles.flex}
-            style={{ marginBottom: "16px" }}
-          >
+          <div className={styles.flex} style={{ marginBottom: "16px" }}></div>
+        </div>
+      </>
+    );
+  };
+
+  const Contacts = () => {
+    return (
+      <>
+        <p>Пожалуйста, заполните форму</p>
+        <div style={{ maxWidth: "905px", margin: "0 auto" }}>
+          <div className={styles.flex}>
+            <div className={styles.Input}>
+              <Field type="text" name="name" placeholder="Ваше имя" />
+            </div>
+            <div className={styles.Input}>
+              <Field type="text" name="phone" placeholder="Номер телефона" />
+            </div>
+          </div>
+          <div className={styles.flex}>
+            <div className={styles.Input}>
+              <Field
+                as="select"
+                name="select"
+                placeholder="Предпочитаемый способ связи"
+              >
+                <option value="">Предпочитаемый способ связи</option>
+                <option value="option1">Пункт 1</option>
+                <option value="option2">Пункт 2</option>
+              </Field>
+            </div>
+            <div className={styles.Input}>
+              <Field
+                as="select"
+                name="select"
+                placeholder="Предпочитаемый способ связи"
+              >
+                <option value="">Предпочитаемый способ связи</option>
+                <option value="option1">Пункт 1</option>
+                <option value="option2">Пункт 2</option>
+              </Field>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  };
+
+  const ObjectSquere = () => {
+    return (
+      <>
+        <p>Введите площадь объекта</p>
+        <div style={{ maxWidth: "905px", margin: "0 auto" }}>
+          <div className={styles.flex} style={{ marginBottom: "16px" }}>
             <div className={styles.Input}>
               <Field
                 type="number"
                 name="square"
                 placeholder="Площадь объекта, от 11 до 500 м2"
-            min={11}
-            max={500}
               />
             </div>
           </div>
@@ -111,24 +159,49 @@ export const Calculator = () => {
       <>
         <p>Выберите этап строительства</p>
         <div style={{ maxWidth: "840px", margin: "0 auto" }}>
-         <div className={styles.flex}>
-            <Field type="radio" id="design" name="buildingStep" value="design" />
+          <div className={styles.flex}>
+            <Field
+              type="radio"
+              id="design"
+              name="buildingStep"
+              value="design"
+            />
             <label htmlFor="design" className={styles.card}>
               <p>Проектирование</p>
             </label>
-            <Field type="radio" id="roughFinish" name="buildingStep" value="roughFinish" />
+            <Field
+              type="radio"
+              id="roughFinish"
+              name="buildingStep"
+              value="roughFinish"
+            />
             <label htmlFor="roughFinish" className={styles.card}>
               <p>Черновая отделка</p>
             </label>
-            <Field type="radio" id="finalFinish" name="buildingStep" value="finalFinish" />
+            <Field
+              type="radio"
+              id="finalFinish"
+              name="buildingStep"
+              value="finalFinish"
+            />
             <label htmlFor="finalFinish" className={styles.card}>
               <p>Чистовая отделка</p>
             </label>
-            <Field type="radio" id="finishRepair" name="buildingStep" value="finishRepair" />
+            <Field
+              type="radio"
+              id="finishRepair"
+              name="buildingStep"
+              value="finishRepair"
+            />
             <label htmlFor="finishRepair" className={styles.card}>
               <p>Ремонт окончен</p>
             </label>
-            <Field type="radio" id="living" name="buildingStep" value="living" />
+            <Field
+              type="radio"
+              id="living"
+              name="buildingStep"
+              value="living"
+            />
             <label htmlFor="living" className={styles.card}>
               <p>Проживание</p>
             </label>
@@ -144,26 +217,23 @@ export const Calculator = () => {
         case 1:
           return { title: "Информация о проекте", item: <RoomType /> };
         case 2:
-          return { title: "Этап строительства", item: <BuildStep/> };
+          return { title: "Этап строительства", item: <BuildStep /> };
         case 3:
-          return { title: "Площадь объекта", item: <ObjectSquere/> };
+          return { title: "Площадь объекта", item: <ObjectSquere /> };
         default:
-          return { title: "Информация о проекте", item: null };
+          return { title: "Информация о проекте", item: <RoomType /> };
       }
     } else {
       switch (step) {
         case 2:
-          return { title: "Область автоматизации", item: null };
+          return { title: "Область автоматизации", item: <Specifications /> };
         case 3:
-          return { title: "Заказать расчет", item: null };
+          return { title: "Заказать расчет", item: <Contacts /> };
         default:
-          return { title: "Информация о проекте", item: null };
+          return { title: "Информация о проекте", item: <RoomType /> };
       }
     }
   };
-
-  const [step, setStep] = useState(1);
-  const [subStep, setSubStep] = useState(1);
 
   const increment = () => {
     if (step === 1) {
@@ -194,12 +264,41 @@ export const Calculator = () => {
         <h2>{title}</h2>
       </header>
 
-      {/* <div>этап 1</div> */}
-      <img
-        style={{ margin: "0 auto", marginBottom: "72px" }}
-        src={Steps}
-        alt="steps"
-      />
+      <div className={styles.steps}>
+        <div>
+          <span
+            className={`${step >= 1 ? styles.active : ""} ${styles.circle}`}
+          >
+            1
+          </span>
+        </div>
+        <div
+          className={`${step > 1 ? styles.active : ""} ${styles.line}`}
+        ></div>
+        <div>
+          <span
+            className={`${step >= 2 ? styles.active : ""} ${styles.circle}`}
+          >
+            2
+          </span>
+        </div>
+        <div
+          className={`${step == 3 ? styles.active : ""} ${styles.line}`}
+        ></div>
+        <div>
+          <span
+            className={`${step == 3 ? styles.active : ""} ${styles.circle}`}
+          >
+            3
+          </span>
+        </div>
+      </div>
+      
+      <div className={styles.stepTitle}>
+        <p>Информация о проекте</p>
+        <p>Область автоматизации</p>
+        <p>Заказать расчет</p>
+      </div>
 
       <StepsForm
         step={step}

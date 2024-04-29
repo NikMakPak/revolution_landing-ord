@@ -3,35 +3,51 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import styles from "./StepsForm.module.scss";
 
-
-
 export const StepsForm = ({ step, increment, subStep, decrement, item }) => {
   const initialValues = {
-    options: [],
+    city: "",
+    district: "",
+    roomType: "",
+    buildingStep: "",
+    square: "",
+    category1: {
+      option1: false,
+      option2: false,
+      option3: false,
+      option4: false,
+    },
+    name: "",
+    phone: "",
+    select: "",
   };
-
-  // Опции для выбора
-  const options = [
-    { id: "1", label: "Опция 1" },
-    { id: "2", label: "Опция 2" },
-    { id: "3", label: "Опция 3" },
-  ];
 
   const handleSubmit = (values) => {
     console.log(values);
-};
+  };
+
+  // todo: сделать валидацию
 
   return (
-    <>
-      <Formik
-        initialValues={{ city: "", district: "", roomType: "", buildingStep: "", square: "" }}
-        onSubmit={handleSubmit}
-      >
-        {() => (
-          <Form className={styles.formBg}>
-            {item}
+    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+      {({ isSubmitting }) => (
+        <Form className={styles.formBg}>
+          {item}
+          {step === 3 && (
+            <div
+              style={{ maxWidth: "905px", margin: "0 auto", marginTop: "24px" }}
+            >
+              <button
+                className="btn btn--modified"
+                type="submit"
+                disabled={isSubmitting}
+              >
+                Отправить расчет
+              </button>
+            </div>
+          )}
 
-            <div className={styles.controls}>
+          <div className={styles.controls}>
+            {!(subStep === 1) && (
               <button
                 type="button"
                 className={styles.disBtn}
@@ -39,15 +55,16 @@ export const StepsForm = ({ step, increment, subStep, decrement, item }) => {
               >
                 Назад
               </button>
+            )}
+
+            {!(step > 2) && (
               <button type="button" className="btn" onClick={increment}>
                 Далее
               </button>
-            </div>
-
-            <button type="submit">submit</button>
-          </Form>
-        )}
-      </Formik>
-    </>
+            )}
+          </div>
+        </Form>
+      )}
+    </Formik>
   );
 };
