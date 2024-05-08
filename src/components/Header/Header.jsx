@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from '../../assets/logo.svg'
 import TgIcon from '../../assets/tg.svg'
 import WhIcon from '../../assets/whapp.svg'
 
 import styles from "./Header.module.scss";
+import { PhoneModal } from "../Modal/PhoneModal";
 
 export const Header = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <header className={styles.header}>
       <nav>
@@ -43,7 +53,9 @@ export const Header = () => {
           </li>
         </ul>
         <div className={styles.contacts}>
-          <button className={"btn"}>Позвонить</button>
+          <button className={"btn"} onClick={handleOpenModal}>
+            Позвонить
+          </button>
           <div className={styles.socials}>
             <a href="#" target="_blank" rel="noopener noreferrer">
               <img src={TgIcon} alt="Telegram icon" />
@@ -54,6 +66,7 @@ export const Header = () => {
           </div>
         </div>
       </nav>
+      <PhoneModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </header>
   );
 };

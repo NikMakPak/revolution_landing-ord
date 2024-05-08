@@ -6,7 +6,7 @@
   max-width: 1130px;
   margin: 0 auto;
   position: relative;
-  p {
+  & > p {
     color: #848487;
   }
 }

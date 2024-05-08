@@ -1,0 +1,15 @@
+.accordion-arrow {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  display: block;
+  width: 30px;
+  height: 17px;
+  fill: rgb(255, 123, 0);
+  transform: translateY(-50%);
+}
+
+.accordion-arrow.active {
+  transform: translateY(-50%) rotate(180deg);
+  fill: green;
+}

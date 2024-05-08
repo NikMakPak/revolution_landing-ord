@@ -1,26 +1,60 @@
 import React from "react";
-import { Formik, Form, Field } from "formik";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
+
 import styles from "./StepsForm.module.scss";
 
-export const StepsForm = ({ step, increment, subStep, decrement, item }) => {
-  const initialValues = {
-    city: "",
-    district: "",
-    roomType: "",
-    buildingStep: "",
-    square: "",
-    category1: {
-      option1: false,
-      option2: false,
-      option3: false,
-      option4: false,
+const initialValues = {
+  city: "",
+  district: "",
+  roomType: "",
+  buildingStep: "",
+  square: "",
+  name: "",
+  phone: "",
+  select: "",
+  categories: [
+    {
+      title: "Управление электропитанием помещения",
+      chosenOptions: [],
     },
-    name: "",
-    phone: "",
-    select: "",
-  };
+    {
+      title: "Обогрев или охлаждение помещений",
+      chosenOptions: [],
+    },
+    {
+      title: "Безопасность",
+      chosenOptions: [],
+    },
+    {
+      title: "Аудиовидео-системы",
+      chosenOptions: [],
+    },
+    {
+      title: "Входная группа объекта",
+      chosenOptions: [],
+    },
+    {
+      title: "Управление освещением",
+      chosenOptions: [],
+    },
+    {
+      title: "Контроль воздуха и воды",
+      chosenOptions: [],
+    },
+    {
+      title: "Центральные интерфейсы управления «Умным домом»",
+      chosenOptions: [],
+    },
+    {
+      title: "Интернет, Wi-Fi, телевидение",
+      chosenOptions: [],
+    },
+  ],
+};
 
+export const StepsForm = ({ step, increment, subStep, decrement, item }) => {
+  
   const handleSubmit = (values) => {
     console.log(values);
   };
@@ -68,3 +102,6 @@ export const StepsForm = ({ step, increment, subStep, decrement, item }) => {
     </Formik>
   );
 };
+
+
+

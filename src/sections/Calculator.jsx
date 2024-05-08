@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { StepsForm } from "../components/StepsForm/StepsForm";
-import Steps from "../assets/steps.png";
-import { Field } from "formik";
+import { Field, useFormikContext } from "formik";
+import { Accordion } from "../components/Accordion/Accordion";
+
+// accordion icons
+
 
 import styles from "./Calculator.module.scss";
 
@@ -83,11 +86,15 @@ export const Calculator = () => {
   };
 
   const Specifications = () => {
+    const { values, setValues } = useFormikContext();
+
     return (
       <>
         <p>Выберите нужные спецификации</p>
         <div style={{ maxWidth: "905px", margin: "0 auto" }}>
-          <div className={styles.flex} style={{ marginBottom: "16px" }}></div>
+          <div className={styles.flex} style={{ marginBottom: "16px" }}>
+            <Accordion categories={values.categories} />
+          </div>
         </div>
       </>
     );
@@ -145,7 +152,7 @@ export const Calculator = () => {
               <Field
                 type="number"
                 name="square"
-                placeholder="Площадь объекта, от 11 до 500 м2"
+                placeholder="Площадь объекта, от 11 до 500 м&sup2;"
               />
             </div>
           </div>
@@ -293,7 +300,7 @@ export const Calculator = () => {
           </span>
         </div>
       </div>
-      
+
       <div className={styles.stepTitle}>
         <p>Информация о проекте</p>
         <p>Область автоматизации</p>
