@@ -118,7 +118,7 @@ h5 {
   font-family: inherit;
   padding: 0.7em 1.2em;
   box-shadow: 0px 15px 64px 0px var(--bg-shadow);
-  transition: all 0.3s ease;
+  transition: all .2s ease-in-out;
   &:hover {
     opacity: 0.8;
   }
@@ -144,7 +144,7 @@ a {
   line-height: 18.53px;
   letter-spacing: -0.02em;
   text-align: left;
-  transition: all 0.3s ease;
+  transition: all .2s ease-in-out;
   &:hover {
     opacity: 1;
   }

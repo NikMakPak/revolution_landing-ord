@@ -1,41 +1,35 @@
 import React from "react";
 import { InfoCard } from "../InfoCard/InfoCard";
+import { v4 as uuidv4 } from "uuid";
 
 import styles from "./InfoWin.module.scss";
 
-export const InfoWin = () => {
+export const InfoWin = ({ data, activeProduct }) => {
   return (
     <aside className={styles.win}>
       <header>
-        <p>Оборудование</p>
-        <h3>Умное освещение</h3>
+        <p>{data.header.title}</p>
+        <h3>{data.header.subtitle}</h3>
       </header>
-      <p className={styles.content}>
-        Умноже освещение от Smart Revoluition позволяет комбинировать различные
-        типы освещения с целью создания комфортных условий в любое время суток.
-        Управлять освещением возможно как при помощи обычных выключателей, так и
-        дистанционно, при помощи мобильного приложения или голосовых помощников
-      </p>
+      <p className={styles.content}>{data.content}</p>
       <ul className={styles.scrollZone}>
-        <InfoCard tag="li">
-          <p>SM Revolution</p>
-          <h5>Камеры видеонаблюдения</h5>
-        </InfoCard>
-        <InfoCard tag="li">
-          <p>SM Revolution</p>
-          <h5>Камеры видеонаблюдения</h5>
-        </InfoCard>
-        <InfoCard tag="li">
-          <p>SM Revolution</p>
-          <h5>Камеры видеонаблюдения</h5>
-        </InfoCard>
-        <InfoCard tag="li">
-          <p>SM Revolution</p>
-          <h5>Камеры видеонаблюдения</h5>
-        </InfoCard>
+        {data.products.map((product) => (
+          <InfoCard
+            tag="li"
+            key={product.id}
+            imgSrc={product.imgSrc}
+            alt={product.title}
+            style={{
+              backgroundColor: activeProduct === product.id ? "#ECEAFF" : "",
+            }}
+          >
+            <p>{product.brand}</p>
+            <h5>{product.title}</h5>
+          </InfoCard>
+        ))}
       </ul>
       <a
-        href="#"
+        href={data.link}
         className="btn btn--modified"
         target="_blank"
         rel="noopener noreferrer"

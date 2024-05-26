@@ -31,7 +31,7 @@
     height: 350px;
     pointer-events: none;
     position: absolute;
-    bottom: -1px;
+    bottom: -150px;
     width: 100%;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 55.01%);
   }
@@ -40,5 +40,13 @@
 .img {
   width: 80vw;
   max-width: 1100px;
+  position: relative;
+  height: 800px;
   margin: 0 auto;
+  background-image: url("../assets/ipadAir.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  resize: both;
+  overflow: auto;
 }

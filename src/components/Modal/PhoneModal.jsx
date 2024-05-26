@@ -20,12 +20,12 @@ const customStyles = {
     width: "551px",
     padding: "24px",
     //  opacity: 0, 
-    transition: 'opacity 0.3s ease-in-out', 
+    transition: 'opacity .2s ease-in-out', 
   },
   overlay: {
     backgroundColor: "rgba(0,0,0, 0.6)",
     //  opacity: 0, 
-    transition: 'opacity 0.3s ease-in-out',
+    transition: 'opacity .2s ease-in-out',
   },
 };
 

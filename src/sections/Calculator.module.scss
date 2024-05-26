@@ -34,7 +34,7 @@ select {
   letter-spacing: -0.02em;
   border: 1px solid #46464b;
   border-radius: 16px;
-  transition: border, background-color 0.3s ease;
+  transition: border, background-color .2s ease-in-out;
 }
 
 .cardImg,

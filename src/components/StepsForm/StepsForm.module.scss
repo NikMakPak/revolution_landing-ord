@@ -29,7 +29,7 @@
   font-family: inherit;
   padding: 0.7em 1.2em;
   background-color: #49494e;
-  transition: all 0.3s ease;
+  transition: all .2s ease-in-out;
   &:hover {
     opacity: 0.8;
   }

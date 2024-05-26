@@ -35,7 +35,7 @@
       width: 100%;
       border: 1px solid #ccccdf;
       border-radius: 16px;
-      transition: border 0.3s ease;
+      transition: border .2s ease-in-out;
     }
     input::placeholder {
       color: #b8b8cb;
