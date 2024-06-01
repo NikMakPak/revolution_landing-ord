@@ -3,11 +3,11 @@ import { useSwiper } from "swiper/react";
 
 import styles from "./Controls.module.scss";
 
-export default function Controls({cl}) {
+export default function Controls() {
   const swiper = useSwiper();
 
   return (
-    <div className={cl + " " + styles.controls}>
+    <div className={styles.controls}>
       <button onClick={() => swiper.slidePrev()}>
         <svg
           width="8"

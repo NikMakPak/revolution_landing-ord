@@ -40,7 +40,7 @@ export const Calculator = () => {
                   fill="#87F398"
                 />
               </svg>
-              <p>Квартира</p>
+              <p className="CaptionL">Квартира</p>
             </label>
             <Field type="radio" id="house" name="roomType" value="house" />
             <label htmlFor="house" className={styles.cardImg}>
@@ -56,7 +56,7 @@ export const Calculator = () => {
                   fill="#87F3A5"
                 />
               </svg>
-              <p>Дом</p>
+              <p className="CaptionL">Дом</p>
             </label>
             <Field
               type="radio"
@@ -77,7 +77,7 @@ export const Calculator = () => {
                   fill="#F3A187"
                 />
               </svg>
-              <p>Коммерческое помещение</p>
+              <p className="CaptionL">Коммерческое помещение</p>
             </label>
           </div>
         </div>
@@ -174,7 +174,7 @@ export const Calculator = () => {
               value="design"
             />
             <label htmlFor="design" className={styles.card}>
-              <p>Проектирование</p>
+              <p className="CaptionL">Проектирование</p>
             </label>
             <Field
               type="radio"
@@ -183,7 +183,7 @@ export const Calculator = () => {
               value="roughFinish"
             />
             <label htmlFor="roughFinish" className={styles.card}>
-              <p>Черновая отделка</p>
+              <p className="CaptionL">Черновая отделка</p>
             </label>
             <Field
               type="radio"
@@ -192,7 +192,7 @@ export const Calculator = () => {
               value="finalFinish"
             />
             <label htmlFor="finalFinish" className={styles.card}>
-              <p>Чистовая отделка</p>
+              <p className="CaptionL">Чистовая отделка</p>
             </label>
             <Field
               type="radio"
@@ -201,7 +201,7 @@ export const Calculator = () => {
               value="finishRepair"
             />
             <label htmlFor="finishRepair" className={styles.card}>
-              <p>Ремонт окончен</p>
+              <p className="CaptionL">Ремонт окончен</p>
             </label>
             <Field
               type="radio"
@@ -210,7 +210,7 @@ export const Calculator = () => {
               value="living"
             />
             <label htmlFor="living" className={styles.card}>
-              <p>Проживание</p>
+              <p className="CaptionL">Проживание</p>
             </label>
           </div>
         </div>

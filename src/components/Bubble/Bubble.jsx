@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import styles from "./Bubble.module.scss";
+import { useScreenWidth } from "../../hooks/useScreenWidth";
 
 const Bubble = ({
   id,
@@ -13,6 +14,7 @@ const Bubble = ({
   parentRef,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const screenWidth = useScreenWidth();
 
   const onEnter = () => {
     setIsHovered(true);
@@ -62,7 +64,12 @@ const Bubble = ({
       <motion.div
         onMouseEnter={() => onEnter()}
         onMouseLeave={() => onLeave()}
-        onClick={() => window.open(`https://smrevolution.ru/${link}`, "_blank")}
+        onClick={() => {
+          if (screenWidth <= 1105) {}
+            else
+            window.open(`https://smrevolution.ru/${link}`, "_blank")
+          }
+        }
         initial={{ scale: 1 }}
         whileHover={{ scale: 1.2 }}
         className={styles.bubble}
@@ -70,7 +77,6 @@ const Bubble = ({
         <img
           src={imgSrc}
           alt={title}
-          style={{ width: "64px", height: "64px" }}
         />
       </motion.div>
       <div className={styles.titleWrap}>

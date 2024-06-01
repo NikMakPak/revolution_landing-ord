@@ -120,18 +120,18 @@ export const Slider = () => {
 
   return (
     <Swiper
-      className="mySwiper"
+      className={styles.mySwiper}
       loop={true}
       spaceBetween={30}
       centeredSlides={true}
       pagination={pagination}
       keyboard={{ enabled: true }}
-      autoplay={{
-        delay: 2500,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      }}
-        modules={[Autoplay, Pagination, Navigation]}
+      // autoplay={{
+      //   delay: 2500,
+      //   disableOnInteraction: false,
+      //   pauseOnMouseEnter: true,
+      // }}
+      modules={[Pagination, Navigation]}
     >
       {slides.map(({ slideBgSrc, infoWinData }, i) => (
         <SwiperSlide>

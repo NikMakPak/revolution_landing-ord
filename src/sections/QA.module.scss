@@ -1,4 +1,10 @@
 .flexContainer {
+  @media (max-width: 1105px) {
+    div {
+    transform: translateY(-20px);
+
+    }
+  }
   display: flex;
   gap: 8px;
   flex-wrap: wrap;

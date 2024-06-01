@@ -1,5 +1,5 @@
 import React from "react";
-import QAImg from "../assets/question-img.webp";
+import QAImg from "../assets/questionPicture.png";
 import { SubmitForm } from "../components/SubmitForm/SubmitForm";
 
 import styles from "./QA.module.scss";

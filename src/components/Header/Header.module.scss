@@ -1,5 +1,7 @@
 .header {
   nav {
+    position: relative;
+    z-index: 3;
     display: flex;
     place-items: center;
     justify-content: space-between;
@@ -20,6 +22,9 @@
     width: 50vw;
     min-width: 630px;
     max-width: 1000px;
+    @media (max-width: 1105px) {
+      display: none;
+    }
   }
   .contacts {
     gap: 16px;
@@ -32,5 +37,45 @@
   }
   .link {
     opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .burger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    @media (max-width: 1105px) {
+      display: block;
+    }
+  }
+  .burgerMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      li {
+        a {
+          font-size: 56px;
+        }
+        margin-bottom: 24px;
+      }
+    }
   }
 }

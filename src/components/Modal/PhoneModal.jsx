@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 import TgIcon from "../../assets/tg.svg";
 import WhIcon from "../../assets/whapp.svg";
+import  Cross  from "../../assets/Cross.svg";
 
 import styles from "./PhoneModal.module.scss";
 
@@ -40,21 +41,7 @@ export const PhoneModal = ({ isOpen, onClose }) => {
     >
       <div className={styles.container}>
         <button className={styles.closeButton} onClick={onClose}>
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M15 15L1 1M15 1L1 15"
-              stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <img src={Cross} alt="Cross" />
         </button>
         <h4 className={styles.title}>Позвонить нам</h4>
         <h5>Центральный офис</h5>

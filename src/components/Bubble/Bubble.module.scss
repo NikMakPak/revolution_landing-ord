@@ -13,12 +13,79 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    img {
+      width: 50%;
+      height: 50%;
+    }
   }
+
   .titleWrap {
     text-align: center;
     width: 200px;
-    p{
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 1105px) {
+  .wrapper {
+    .bubble {
+      width: 83px;
+      height: 83px;
+
+      img {
+        width: 50%;
+        height: 50%;
+      }
+    }
+
+    .titleWrap {
+      p {
         font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    .bubble {
+      width: 40px;
+      height: 40px;
+
+      img {
+        width: 50%;
+        height: 50%;
+      }
+    }
+
+    .titleWrap {
+      p {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .wrapper {
+    .bubble {
+      width: 40px;
+      height: 40px;
+
+      img {
+        width: 50%;
+        height: 50%;
+      }
+    }
+
+    .titleWrap {
+      p {
+        font-size: 10px;
+      }
     }
   }
 }

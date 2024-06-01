@@ -24,7 +24,7 @@ export const InfoWin = ({ data, activeProduct }) => {
             }}
           >
             <p>{product.brand}</p>
-            <h5>{product.title}</h5>
+            <p>{product.title}</p>
           </InfoCard>
         ))}
       </ul>
