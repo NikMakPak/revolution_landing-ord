@@ -4,6 +4,9 @@
   gap: 100px;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 1105px) {
+    flex-direction: column;
+  }
   h4 {
     font-size: 18px;
     line-height: 25.2px;
@@ -15,21 +18,34 @@
     margin-bottom: 64px;
     h2 {
       max-width: 675px;
+      @media (max-width: 1105px) {
+      max-width: 420px;
     }
-    h5,h6 {
+    }
+    h5,
+    h6 {
       opacity: 0.5;
       margin-bottom: 2em;
+      @media (max-width: 1105px) {
+      font-size: 18px;
+      margin-bottom: 16px;
+      }
     }
-    a{
+    a {
       font-size: 40px;
     }
   }
   .exitOfficeWrapper {
     display: flex;
     align-items: center;
+    gap: 92px;
     font-size: 24px;
     p {
       max-width: 335px;
+      @media (max-width: 1105px) {
+      font-size: 18px;
+      max-width: 270px;
+    }
     }
   }
   .contacts {
@@ -57,7 +73,12 @@
     .shopWrapper {
       display: flex;
       justify-content: space-between;
-      .block a{
+      @media (max-width: 1105px) {
+              justify-content: flex-start;
+              gap: 90px;
+
+      }
+      .block a {
         font-size: 24px;
       }
     }
@@ -65,7 +86,7 @@
 }
 
 .footer {
-  opacity: 0.5;
+  color: #666666;
   font-size: 18px;
   border-top: 1px solid #1d1d2a;
   padding-top: 18px;

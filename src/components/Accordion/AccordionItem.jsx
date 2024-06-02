@@ -140,27 +140,30 @@ const ChooseBlock = ({ category, index }) => {
     <>
       {categories[index].options.map((option, optionIndex) => (
         <div key={optionIndex}>
-          <Field
-            type="checkbox"
-            name={`categories[${index}].chosenOptions`}
-            value={option}
-            checked={category.chosenOptions.includes(option)}
-            onChange={(e) => {
-              const newChosenOptions = [...category.chosenOptions];
-              if (e.target.checked) {
-                newChosenOptions.push(e.target.value);
-              } else {
-                newChosenOptions.splice(
-                  newChosenOptions.indexOf(e.target.value),
-                  1
-                );
-              }
-              const newCategories = [...values.categories];
-              newCategories[index].chosenOptions = newChosenOptions;
-              setValues({ ...values, categories: newCategories });
-            }}
-          />
-          {option}
+          <label htmlFor={option}>
+            <Field
+              type="checkbox"
+              name={`categories[${index}].chosenOptions`}
+              id={option}
+              value={option}
+              checked={category.chosenOptions.includes(option)}
+              onChange={(e) => {
+                const newChosenOptions = [...category.chosenOptions];
+                if (e.target.checked) {
+                  newChosenOptions.push(e.target.value);
+                } else {
+                  newChosenOptions.splice(
+                    newChosenOptions.indexOf(e.target.value),
+                    1
+                  );
+                }
+                const newCategories = [...values.categories];
+                newCategories[index].chosenOptions = newChosenOptions;
+                setValues({ ...values, categories: newCategories });
+              }}
+            />
+            {option}
+          </label>
         </div>
       ))}
       <button
@@ -183,8 +186,9 @@ export const AccordionItem = ({ onClick, isOpen, category, index }) => {
     <li className={styles.item}>
       <div
         className={styles.header}
+        id={isOpen ? '' : 'clickable-zone'}
         onClick={(e) => {
-          if (e.target.tagName === "H5" && !isOpen) {
+          if (e.target.id === "clickable-zone" || e.target.tagName === "H5") {
             onClick();
           }
           return;

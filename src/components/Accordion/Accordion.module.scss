@@ -1,13 +1,16 @@
-.accordion{
+.accordion {
   margin: 16px;
   padding: 16px;
+  label {
+    cursor: pointer;
+  }
 }
 .item {
   margin-bottom: 16px;
 }
 .header {
   position: relative;
-//   width: 100%;
+  //   width: 100%;
   padding: 16px;
   text-align: left;
   cursor: pointer;
@@ -16,29 +19,27 @@
   outline: none;
   border: 1px solid #46464b;
   border-radius: 12px;
-  h5{
-  margin-bottom: 16px;
-
+  h5 {
+    // margin-bottom: 16px;
   }
 }
 
 .body {
   font-size: 14px;
-  color: #A8A8AA;
+  color: #a8a8aa;
   padding-top: 16px;
 }
 
 .collapse {
   height: 0;
   overflow: hidden;
-  border-top: 1px solid #404040;
-  transition: height .2s;
+  transition: height 0.2s;
 }
 
-.btn{
+.btn {
   margin-top: 16px;
 }
-.disabledBtn{
-  background-color: #53525B !important;
+.disabledBtn {
+  background-color: #53525b !important;
   box-shadow: none !important;
 }

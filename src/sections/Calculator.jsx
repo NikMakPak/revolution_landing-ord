@@ -150,7 +150,7 @@ export const Calculator = () => {
           <div className={styles.flex} style={{ marginBottom: "16px" }}>
             <div className={styles.Input}>
               <Field
-                type="number"
+                type="text"
                 name="square"
                 placeholder="Площадь объекта, от 11 до 500 м&sup2;"
               />
@@ -303,7 +303,7 @@ export const Calculator = () => {
 
       <div className={styles.stepTitle}>
         <p>Информация о проекте</p>
-        <p>Область автоматизации</p>
+        <p className={styles.centerT}>Область автоматизации</p>
         <p>Заказать расчет</p>
       </div>
 

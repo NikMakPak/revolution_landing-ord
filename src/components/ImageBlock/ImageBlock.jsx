@@ -3,12 +3,15 @@ import { InfoCard } from "../InfoCard/InfoCard";
 
 import styles from "./ImageBlock.module.scss";
 
-export const ImageBlock = ({imgSrc}) => {
+export const ImageBlock = ({title,text, bgImgSrc,imgSrc}) => {
   return (
-    <div className={styles.block}>
-      <h3>Тайтл</h3>
+    <div
+      className={styles.block}
+      style={{ backgroundImage: `url(${bgImgSrc})` }}
+    >
+      <h3>{title}</h3>
       <InfoCard cl={styles.card} tag="li" imgSrc={imgSrc}>
-        <p>Текст сценарий</p>
+        <p>{text}</p>
       </InfoCard>
     </div>
   );

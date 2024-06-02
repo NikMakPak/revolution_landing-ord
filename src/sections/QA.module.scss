@@ -1,8 +1,10 @@
 .flexContainer {
   @media (max-width: 1105px) {
     div {
-    transform: translateY(-20px);
-
+      transform: translateY(-20px);
+    }
+    img{
+      width: 100%;
     }
   }
   display: flex;
@@ -11,26 +13,27 @@
   img {
     flex: 1;
     object-fit: cover;
-    width: 790px;
+    border-radius: 24px;
   }
 }
-.qaHeader{
-    display: flex;
-    margin-bottom: 100px;
-    flex-wrap: wrap;
-    & > div{
-      flex: 1;
-      width: 100%;
-    }
-    & div:first-child{
-      flex: 1.6;
-    }
-    h3{
-      width: 75%;
-      min-width: 600px;
-    }
-    p{
-      width: 75%;
-      min-width: 450px;
-    }
+
+.qaHeader {
+  display: flex;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+  & > div {
+    flex: 1;
+    width: 100%;
   }
+  & div:first-child {
+    flex: 1.6;
+  }
+  h3 {
+    width: 75%;
+    min-width: 600px;
+  }
+  p {
+    width: 75%;
+    min-width: 450px;
+  }
+}
