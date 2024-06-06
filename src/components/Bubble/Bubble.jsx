@@ -12,6 +12,7 @@ const Bubble = ({
   link,
   setActiveProduct = () => {},
   parentRef,
+  setOpenModal,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const screenWidth = useScreenWidth();
@@ -65,8 +66,9 @@ const Bubble = ({
         onMouseEnter={() => onEnter()}
         onMouseLeave={() => onLeave()}
         onClick={() => {
-          if (screenWidth <= 1105) {}
-            else
+          if (screenWidth <= 1140) {
+            setOpenModal(true)
+          } else
             window.open(`https://smrevolution.ru/${link}`, "_blank")
           }
         }
