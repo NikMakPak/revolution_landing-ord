@@ -12,7 +12,6 @@ export const Slide = ({ imgSrc, data }) => {
   const [isOpen, setOpen] = useState(false);
   const screenWidth = useScreenWidth();
   const swiper = useSwiper();
-  // debugger
 
   useEffect(() => {
     if (swiper) {

@@ -1,5 +1,5 @@
 import React from "react";
-import Hub from "../assets/hub.webp";
+import Hub from "../assets/hub.png";
 
 import styles from "./Opportunities.module.scss";
 

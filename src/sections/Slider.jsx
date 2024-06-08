@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // slides images
-import Slide1 from "../assets/img1-slide.webp";
+import Slide1 from "../assets/slide1.png";
+import Slide2 from "../assets/img1-slide.webp";
+import Slide3 from "../assets/slide3.png";
+import Slide4 from "../assets/slide4.png";
 
 // product images
 import Camera from "../assets/camera.webp";
@@ -15,6 +18,7 @@ import { v4 as uuidv4 } from "uuid";
 import "swiper/scss";
 import "swiper/scss/pagination";
 import styles from "./Slider.module.scss";
+import { InstaProgressBar } from "../components/InstaProgressBar/InstaProgressBar";
 
 const slides = [
   {
@@ -22,30 +26,32 @@ const slides = [
     infoWinData: {
       header: {
         title: "Оборудование",
-        subtitle: "Умное освещение",
+        subtitle: "Шустрый «Звонарь»",
       },
-      content:
-        "Умноже освещение от Smart Revoluition позволяет комбинировать различные типы освещения с целью создания комфортных условий в любое время суток. Управлять освещением возможно как при помощи обычных выключателей, так и дистанционно, при помощи мобильного приложения или голосовых помощников",
+      content: [
+        "Поддерживает индивидуальные параметры микроклимата в помещении — температура, влажность, СО2",
+        "Дистанционное управление позволяет подготовить избу или хоромы к Вашему приезду",
+      ],
       link: "#",
       products: [
         {
           id: uuidv4(),
           brand: "SM Revolution",
-          title: "Датчик дыма",
+          title: "Камеры видеонаблюдения",
           position: { x: 600, y: 88 },
           imgSrc: Camera,
         },
         {
           id: uuidv4(),
           brand: "SM Revolution",
-          title: "WI-FI Lamp",
+          title: "Датчик размыкания",
           position: { x: 890, y: 340 },
           imgSrc: Camera,
         },
         {
           id: uuidv4(),
           brand: "SM Revolution",
-          title: "Датчик протечки",
+          title: "Датчики движения",
           position: { x: 1230, y: 510 },
           imgSrc: Camera,
         },
@@ -53,7 +59,7 @@ const slides = [
     },
   },
   {
-    slideBgSrc: Slide1,
+    slideBgSrc: Slide2,
     infoWinData: {
       header: {
         title: "Оборудование",
@@ -81,7 +87,35 @@ const slides = [
     },
   },
   {
-    slideBgSrc: Slide1,
+    slideBgSrc: Slide3,
+    infoWinData: {
+      header: {
+        title: "Оборудование",
+        subtitle: "Умное освещение",
+      },
+      content:
+        "Умноже освещение от Smart Revoluition позволяет комбинировать различные типы освещения с целью создания комфортных условий в любое время суток. Управлять освещением возможно как при помощи обычных выключателей, так и дистанционно, при помощи мобильного приложения или голосовых помощников",
+      link: "#",
+      products: [
+        {
+          id: uuidv4(),
+          brand: "SM Revolution",
+          title: "Камеры видеонаблюдения1",
+          position: { x: 600, y: 88 },
+          imgSrc: Camera,
+        },
+        {
+          id: uuidv4(),
+          brand: "SM Revolution",
+          title: "Камеры видеонаблюдения2",
+          position: { x: 880, y: 350 },
+          imgSrc: Camera,
+        },
+      ],
+    },
+  },
+  {
+    slideBgSrc: Slide4,
     infoWinData: {
       header: {
         title: "Оборудование",
@@ -111,12 +145,7 @@ const slides = [
 ];
 
 export const Slider = () => {
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + "</span>";
-    },
-  };
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <Swiper
@@ -124,21 +153,22 @@ export const Slider = () => {
       loop={true}
       spaceBetween={30}
       centeredSlides={true}
-      // pagination={pagination}
       keyboard={{ enabled: true }}
+      onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
       autoplay={{
         delay: 5000,
         disableOnInteraction: false,
-        pauseOnMouseEnter: true,
+        pauseOnMouseEnter: false,
       }}
       modules={[Autoplay, Pagination, Navigation]}
     >
       {slides.map(({ slideBgSrc, infoWinData }, i) => (
-        <SwiperSlide>
+        <SwiperSlide key={i}>
           <Slide key={i} imgSrc={slideBgSrc} data={infoWinData} />
         </SwiperSlide>
       ))}
       <Controls />
+      <InstaProgressBar slides={slides} activeIndex={activeIndex} />
     </Swiper>
   );
 };
