@@ -28,6 +28,9 @@ const customStyles = {
     //  opacity: 0, 
     transition: 'opacity .2s ease-in-out',
   },
+  "@media (max-width: 1105px)": {
+    width: "90%",
+  }
 };
 
 export const PhoneModal = ({ isOpen, onClose }) => {

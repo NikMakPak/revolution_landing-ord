@@ -31,9 +31,15 @@
   h3 {
     width: 75%;
     min-width: 600px;
+    @media (max-width: 600px) {
+      min-width: auto;
+    }
   }
   p {
     width: 75%;
     min-width: 450px;
+    @media (max-width: 600px) {
+      min-width: auto;
+    }
   }
 }

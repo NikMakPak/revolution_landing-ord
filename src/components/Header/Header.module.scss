@@ -24,6 +24,7 @@
     max-width: 1000px;
     @media (max-width: 1105px) {
       display: none;
+      min-width: auto;
     }
   }
   .contacts {

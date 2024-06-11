@@ -17,6 +17,9 @@
   .points {
     flex: 0.5;
     min-width: 400px;
+     @media (max-width: 768px) {
+      min-width: auto;
+    }
     li {
       padding-bottom: 80px;
       h4 {
