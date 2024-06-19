@@ -2,11 +2,18 @@ import React, { useRef } from "react";
 import cn from "classnames";
 import { Field, useFormikContext } from "formik";
 
+//icons
+import Dash from "../../assets/electric.svg";
+import Net from "../../assets/net.svg";
+import Router from "../../assets/router.svg";
+import Security from "../../assets/security.svg";
+
 import styles from "./Accordion.module.scss";
 
 const categories = [
   {
     title: "Управление электропитанием помещения",
+    iconSrc: Dash,
     options: [
       "Требуется проект электрощита",
       "Требуется сборка электрощита",
@@ -18,6 +25,7 @@ const categories = [
   },
   {
     title: "Обогрев или охлаждение помещений",
+    iconSrc: Dash,
     options: [
       "Настенные радиаторы (батареи отопления)",
       "Внутрипольные конвекторы",
@@ -29,6 +37,7 @@ const categories = [
   },
   {
     title: "Безопасность",
+    iconSrc: Security,
     options: [
       "Биометрические/умные замки",
       "Имитация присутствия человека",
@@ -47,6 +56,7 @@ const categories = [
   },
   {
     title: "Аудиовидео-системы",
+    iconSrc: Dash,
     options: [
       "Домашний кинотеатр",
       "Мультирум-система (единая звуковая дорожка в каждом помещении)",
@@ -56,6 +66,7 @@ const categories = [
   },
   {
     title: "Входная группа объекта",
+    iconSrc: Dash,
     options: [
       "Интеграция с подъездным домофоном",
       "Домофоны для ворот на участке",
@@ -72,6 +83,7 @@ const categories = [
   },
   {
     title: "Управление освещением",
+    iconSrc: Dash,
     options: [
       "Плавное включение/отключение световых приборов",
       "Возможность диммирование света",
@@ -84,6 +96,7 @@ const categories = [
   },
   {
     title: "Контроль воздуха и воды",
+    iconSrc: Dash,
     options: [
       "Автоматизация приточной вентиляции",
       "Использование увлажнителей воздуха",
@@ -95,7 +108,8 @@ const categories = [
     ],
   },
   {
-    title: "Центральные интерфейсы управления «Умным домом»",
+    title: "Центральные интерфейсы управления",
+    iconSrc: Router,
     options: [
       "Настенные панели управления",
       "Настольные панели управления",
@@ -108,6 +122,7 @@ const categories = [
   },
   {
     title: "Интернет, Wi-Fi, телевидение",
+    iconSrc: Net,
     options: [
       "Эфирное центральное телевидение",
       "Спутниковое телевидение",
@@ -186,15 +201,28 @@ export const AccordionItem = ({ onClick, isOpen, category, index }) => {
     <li className={styles.item}>
       <div
         className={styles.header}
-        id={isOpen ? '' : 'clickable-zone'}
+        id={isOpen ? "" : "clickable-zone"}
         onClick={(e) => {
-          if (e.target.id === "clickable-zone" || e.target.tagName === "H5") {
+          if (
+            e.target.id === "clickable-zone" ||
+            e.target.tagName === "H5" ||
+            e.target.tagName === "DIV"
+          ) {
             onClick();
           }
           return;
         }}
       >
-        <h5>{category.title}</h5>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+          <h5>{category.title}</h5>
+          <img src={categories[index].iconSrc} alt="icon" style={{ marginRight: "8px" }} />
+        </div>
         <div
           className={styles.collapse}
           style={

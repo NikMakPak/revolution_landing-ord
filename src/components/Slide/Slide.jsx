@@ -22,8 +22,14 @@ export const Slide = ({ imgSrc, data }) => {
 
   return (
     <div className={styles.slide}>
-      <img className={styles.img} src={imgSrc} alt="slide's background image" />
-      {screenWidth <= 1140 ? (
+      <img
+        className={styles.img}
+        src={imgSrc}
+        alt="slide's background image"
+        loading="lazy"
+      />
+      <div class="swiper-lazy-preloader"></div>
+      {screenWidth <= 1440 ? (
         <BottomSheet
           data={data}
           activeProduct={activeProduct}

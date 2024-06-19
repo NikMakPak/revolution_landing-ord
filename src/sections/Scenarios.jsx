@@ -51,7 +51,7 @@ const data = [
 ];
 export const Scenarios = () => {
   return (
-    <section>
+    <section id="scenarios">
       <header className={styles.header}>
         <h4>Сценарии</h4>
         <h2>Сценарии — устремлены в бесконечное</h2>

@@ -6,7 +6,7 @@ import styles from "./Footer.module.scss";
 
 export const Footer = () => {
   return (
-    <section>
+    <section id="contacts">
       <div className={styles.info}>
         <div>
           <h4>Центральный офис</h4>

@@ -15,11 +15,17 @@
       letter-spacing: -0.02em;
       text-align: left;
     }
+    .logo {
+      @media (max-width: 500px) {
+          width: 111px;
+          height: 50px;
+        }
+    }
   }
   .ul {
     display: flex;
     justify-content: space-between;
-    width: 50vw;
+    width: 50%;
     min-width: 630px;
     max-width: 1000px;
     @media (max-width: 1105px) {
@@ -32,8 +38,11 @@
     display: flex;
     .socials {
       display: flex;
-      gap: 8px;
+      gap: 16px;
       place-items: center;
+      @media (max-width: 500px) {
+          display: none;
+        }
     }
   }
   .link {

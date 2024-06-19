@@ -5,7 +5,7 @@ import styles from "./Opportunities.module.scss";
 
 export const Opportunities = () => {
   return (
-    <section>
+    <section id="opportunities">
       <header className={styles.header}>
         <h4>Возможности</h4>
         <h2>Предназначение умного дома</h2>
@@ -28,7 +28,14 @@ export const Opportunities = () => {
             <p className="inactive">Дополнительный текст</p>
           </li>
         </ul>
-        <img className={styles.img} src={Hub} alt="The hub with all products" />
+        <div className={styles.hubWrap}>
+          <img
+            className={styles.img}
+            src={Hub}
+            alt="The hub with all products"
+          />
+          <div className={styles.circle}></div>
+        </div>
       </div>
     </section>
   );

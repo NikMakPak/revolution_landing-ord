@@ -1,12 +1,15 @@
 .slide {
   position: relative;
+  @media (max-width: 1440px) {
+    overflow-x: scroll;
+  }
   aside {
     left: 40px;
     top: 50%;
     height: 90%;
     transform: translate(0, -48%);
     position: absolute;
-    @media (max-width: 1140px) {
+    @media (max-width: 1440px) {
       transform: none;
       left: 0;
       bottom: 0;
@@ -19,5 +22,8 @@
   }
   .img {
     width: 100%;
+    @media (max-width: 1440px) {
+      width: auto;
+    }
   }
 }

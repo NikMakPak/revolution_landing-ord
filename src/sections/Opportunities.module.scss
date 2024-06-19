@@ -1,9 +1,11 @@
 .header {
   margin-bottom: 60px;
+
   h4 {
     color: #7876ff;
     margin-bottom: 24px;
   }
+
   h2 {
     max-width: 560px;
   }
@@ -14,28 +16,144 @@
   justify-content: space-between;
   flex-wrap: wrap;
   column-gap: 50px;
+
+  @media (max-width: 1440px) {
+    flex-direction: column;
+  }
+
   .points {
     flex: 0.5;
     min-width: 400px;
-     @media (max-width: 768px) {
+
+    @media (max-width: 768px) {
       min-width: auto;
     }
+
     li {
+      @media (max-width: 768px) {
+        width: 350px;
+      }
+
       padding-bottom: 80px;
+
       h4 {
         margin-bottom: 24px;
       }
+
       p {
         font-weight: 100;
       }
     }
   }
 }
-.img {
+
+.hubWrap {
   width: 100%;
-  min-width: 719px;
   flex: 1;
-  @media (max-width: 1105px) {
-    min-width: auto;
+  overflow: hidden;
+  max-height: 614px;
+  position: relative;
+
+
+
+  .img {
+    margin: 0 auto;
+    width: 100%;
+
+    @media (max-width: 1440px) {
+      height: 506px;
+    }
+
+    @media (max-width: 768px) {
+      height: 240px;
+    }
+  }
+
+  .circle {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 164px;
+    height: 164px;
+    border-radius: 50%;
+
+    @media (max-width: 768px) {
+      width: 62px;
+      height: 62px;
+      bottom: -15px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0px;
+      height: 0px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.295);
+      animation: ripple 2s linear infinite;
+
+      @media (max-width: 768px) {
+        animation: ripple 1.5s linear infinite;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0px;
+      height: 0px;
+      border-radius: 50%;
+      border: 2px solid rgb(255, 255, 255);
+      animation: ripple 2s 0.2s ease-out infinite;
+
+      @media (max-width: 768px) {
+        animation: ripple 1.5s 0.2s ease-out infinite;
+      }
+    }
+  }
+
+
+
+  @keyframes ripple {
+    0% {
+      width: 165px;
+      height: 165px;
+      opacity: 1;
+
+    }
+
+    100% {
+      width: 820px;
+      height: 820px;
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .circle::before {
+      width: 62px;
+      height: 62px;
+    }
+
+    @keyframes ripple {
+      0% {
+        width: 62px;
+        height: 62px;
+        opacity: 1;
+      }
+
+      100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+      }
+    }
   }
 }

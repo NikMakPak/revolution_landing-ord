@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 
@@ -13,6 +13,7 @@ const initialValues = {
   name: "",
   phone: "",
   select: "",
+  file: null,
   categories: [
     {
       title: "Управление электропитанием помещения",
@@ -43,7 +44,7 @@ const initialValues = {
       chosenOptions: [],
     },
     {
-      title: "Центральные интерфейсы управления «Умным домом»",
+      title: "Центральные интерфейсы управления",
       chosenOptions: [],
     },
     {
@@ -53,17 +54,55 @@ const initialValues = {
   ],
 };
 
+const validationSchema = Yup.object()
+  .shape({
+    city: Yup.string()
+      .matches(
+        /^[a-zA-Zа-яА-Я\s]+$/,
+        'Поле "Город" должно содержать только текст'
+      )
+      .required('Поле "Город" обязательно для заполнения'),
+    district: Yup.string()
+      .matches(
+        /^[a-zA-Zа-яА-Я\s]+$/,
+        'Поле "Район" должно содержать только текст'
+      )
+      .required('Поле "Район" обязательно для заполнения'),
+    square: Yup.string()
+      .matches(/^\d+$/, "Введите корректное значение площади")
+      .required("Обязательное поле"),
+    phone: Yup.string()
+      .matches(/^[0-9]+$/, "Only numbers are allowed")
+      .nullable(),
+    email: Yup.string().email("Invalid email format").nullable(),
+    file: Yup.mixed()
+      .test("fileSize", "File size is too large", (value) => {
+        return value ? value.size <= 5242880 : true;
+      })
+      .nullable()
+      .required("Обязательное поле"),
+  })
+  .test(
+    "phoneOrEmail",
+    "At least one of phone or email is required",
+    function (value) {
+      return value.phone || value.email;
+    }
+  );
+
 export const StepsForm = ({ step, increment, subStep, decrement, item }) => {
-  
+
   const handleSubmit = (values) => {
     console.log(values);
   };
 
-  // todo: сделать валидацию
-
   return (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-      {({ isSubmitting }) => (
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+    >
+      {({ isSubmitting, dirty, isValid, values }) => (
         <Form className={styles.formBg}>
           {item}
           {step === 3 && (
@@ -73,7 +112,8 @@ export const StepsForm = ({ step, increment, subStep, decrement, item }) => {
               <button
                 className="btn btn--modified"
                 type="submit"
-                disabled={isSubmitting}
+                // disabled={isSubmitting}
+                disabled={!isValid || !dirty || !(values.phone || values.email)}
               >
                 Отправить расчет
               </button>

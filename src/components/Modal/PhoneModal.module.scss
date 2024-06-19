@@ -53,6 +53,10 @@
 .phoneLink{
   flex: 1;
   min-width: 265px;
+  color: #fff;
+  p {
+    font-size: 24px;
+  }
 }
 .closeButton {
   position: absolute;

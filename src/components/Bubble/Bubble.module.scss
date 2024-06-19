@@ -1,3 +1,39 @@
+.wrapperAdapt {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+
+  .bubble {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 50%;
+      height: 50%;
+    }
+  }
+
+  .titleWrap {
+    text-align: center;
+    width: 200px;
+
+    @media (max-width: 750px) {
+      width: 100px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
+
 .wrapper {
   position: absolute;
   display: flex;
@@ -30,8 +66,8 @@
   }
 }
 
-@media (max-width: 1105px) {
-  .wrapper {
+@media (max-width: 1400px) {
+  .wrapperAdapt {
     .bubble {
       width: 83px;
       height: 83px;
@@ -50,28 +86,8 @@
   }
 }
 
-@media (max-width: 768px) {
-  .wrapper {
-    .bubble {
-      width: 40px;
-      height: 40px;
-
-      img {
-        width: 50%;
-        height: 50%;
-      }
-    }
-
-    .titleWrap {
-      p {
-        font-size: 10px;
-      }
-    }
-  }
-}
-
-@media (max-width: 375px) {
-  .wrapper {
+@media (max-width: 750px) {
+  .wrapperAdapt {
     .bubble {
       width: 40px;
       height: 40px;

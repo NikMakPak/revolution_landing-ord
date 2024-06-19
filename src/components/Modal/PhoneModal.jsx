@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "react-modal";
 import TgIcon from "../../assets/tg.svg";
 import WhIcon from "../../assets/whapp.svg";
-import  Cross  from "../../assets/Cross.svg";
+import Cross from "../../assets/Cross.svg";
 
 import styles from "./PhoneModal.module.scss";
 
@@ -18,19 +18,15 @@ const customStyles = {
     backdropFilter: "blur(50px)",
     border: "1px solid #46464b",
     borderRadius: "16px",
-    width: "551px",
+    width: "100%",
+    maxWidth: "551px",
     padding: "24px",
-    //  opacity: 0, 
-    transition: 'opacity .2s ease-in-out', 
+    transition: "opacity .2s ease-in-out",
   },
   overlay: {
     backgroundColor: "rgba(0,0,0, 0.6)",
-    //  opacity: 0, 
-    transition: 'opacity .2s ease-in-out',
+    transition: "opacity .2s ease-in-out",
   },
-  "@media (max-width: 1105px)": {
-    width: "90%",
-  }
 };
 
 export const PhoneModal = ({ isOpen, onClose }) => {
@@ -40,7 +36,6 @@ export const PhoneModal = ({ isOpen, onClose }) => {
       onRequestClose={onClose}
       style={customStyles}
       ariaHideApp={false}
-      // className={styles.modal}
     >
       <div className={styles.container}>
         <button className={styles.closeButton} onClick={onClose}>

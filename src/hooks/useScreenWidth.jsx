@@ -16,4 +16,4 @@ export const useScreenWidth = () => {
   }, []);
 
   return screenWidth;
-}
+};

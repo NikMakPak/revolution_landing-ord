@@ -19,6 +19,7 @@ import "swiper/scss";
 import "swiper/scss/pagination";
 import styles from "./Slider.module.scss";
 import { InstaProgressBar } from "../components/InstaProgressBar/InstaProgressBar";
+import { useScreenWidth } from "../hooks/useScreenWidth";
 
 const slides = [
   {
@@ -146,6 +147,7 @@ const slides = [
 
 export const Slider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const screenWidth = useScreenWidth();
 
   return (
     <Swiper
@@ -154,6 +156,7 @@ export const Slider = () => {
       spaceBetween={30}
       centeredSlides={true}
       keyboard={{ enabled: true }}
+      allowTouchMove={screenWidth > 1440}
       onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
       autoplay={{
         delay: 5000,
@@ -168,6 +171,11 @@ export const Slider = () => {
         </SwiperSlide>
       ))}
       <Controls />
+      {screenWidth <= 1440 && (
+        <p className={styles.caption}>
+          Нажмите на любой объект, <br /> Передвигайтесь при помощи пальцев
+        </p>
+      )}
       <InstaProgressBar slides={slides} activeIndex={activeIndex} />
     </Swiper>
   );

@@ -63,8 +63,8 @@ export const SubmitForm = () => {
                 className={errors.select && touched.select ? styles.error : ""}
               >
                 <option value="">Предпочитаемый способ связи</option>
-                <option value="option1">Пункт 1</option>
-                <option value="option2">Пункт 2</option>
+                <option value="tel">Телефон</option>
+                <option value="whatsapp">WhatsApp</option>
               </Field>
             </div>
             <div className={styles.Checkbox}>

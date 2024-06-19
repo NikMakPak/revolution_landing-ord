@@ -18,51 +18,75 @@ const products = [
     id: uuidv4(),
     brand: "SM Revolution",
     title: "Датчик дыма",
-    position: { x: 80, y: 340 },
+    position: {
+      1440: { x: 80, y: 340 },
+      768: { x: 20, y: 230 },
+      375: { x: 0, y: 105 },
+    },
     imgSrc: Door,
   },
   {
     id: uuidv4(),
     brand: "SM Revolution",
     title: "WI-FI Lamp",
-    position: { x: 155, y: 215 },
+    position: {
+      1440: { x: 155, y: 215 },
+      768: { x: 70, y: 148 },
+      375: { x: 28, y: 66 },
+    },
     imgSrc: Handler,
   },
   {
     id: uuidv4(),
     brand: "SM Revolution",
     title: "Датчик протечки",
-    position: { x: 387, y: 425 },
+    position: {
+      1440: { x: 387, y: 425 },
+      768: { x: 230, y: 265 },
+      375: { x: 100, y: 133 },
+    },
     imgSrc: Steam,
   },
   {
     id: uuidv4(),
     brand: "SM Revolution",
     title: "Датчик протечки",
-    position: { x: 590, y: 110 },
+    position: {
+      1440: { x: 590, y: 110 },
+      768: { x: 350, y: 80 },
+      375: { x: 140, y: 33 },
+    },
     imgSrc: Lamp,
   },
   {
     id: uuidv4(),
     brand: "SM Revolution",
     title: "Датчик протечки",
-    position: { x: 850, y: 72 },
+    position: {
+      1440: { x: 850, y: 72 },
+      768: { x: 536, y: 57 },
+      375: { x: 240, y: 22 },
+    },
     imgSrc: Camera,
   },
   {
     id: uuidv4(),
     brand: "SM Revolution",
     title: "Датчик протечки",
-    position: { x: 870, y: 383 },
+    position: {
+      1440: { x: 870, y: 383 },
+      768: { x: 520, y: 260 },
+      375: { x: 230, y: 118 },
+    },
     imgSrc: Radar,
   },
 ];
 
 export const Main = () => {
-  const imgRef = useRef(null)
+  const imgRef = useRef(null);
 
   return (
-    <main className={styles.main}>
+    <main className={styles.main} id="main">
       <Header />
       <div className={styles.title}>
         <p>Smart Revolution &#8212; это</p>
@@ -71,7 +95,7 @@ export const Main = () => {
       </div>
       <div className={styles.img} ref={imgRef}>
         {products.map((product) => (
-          <Bubble key={product.id} parentRef={imgRef} {...product} />
+          <Bubble key={product.id} isAdaptive={true} parentRef={imgRef} {...product} />
         ))}
       </div>
     </main>

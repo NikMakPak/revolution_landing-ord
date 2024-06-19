@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StepsForm } from "../components/StepsForm/StepsForm";
-import { Field, useFormikContext } from "formik";
+import { ErrorMessage, Field, useField, useFormikContext } from "formik";
 import { Accordion } from "../components/Accordion/Accordion";
 
 // accordion icons
@@ -20,12 +20,22 @@ export const Calculator = () => {
           <div className={styles.flex} style={{ marginBottom: "16px" }}>
             <div className={styles.Input}>
               <Field type="text" name="city" placeholder="Введите город" />
+              <ErrorMessage
+                name="city"
+                component="div"
+                className={styles.error}
+              />
             </div>
             <div className={styles.Input}>
               <Field type="text" name="district" placeholder="Введите район" />
+              <ErrorMessage
+                name="district"
+                component="div"
+                className={styles.error}
+              />
             </div>
           </div>
-          <div className={styles.flex}>
+          <div className={styles.flex} style={{ rowGap: "9px" }}>
             <Field type="radio" id="flat" name="roomType" value="flat" />
             <label htmlFor="flat" className={styles.cardImg}>
               <svg
@@ -91,7 +101,7 @@ export const Calculator = () => {
     return (
       <>
         <p>Выберите нужные спецификации</p>
-        <div style={{ maxWidth: "905px", margin: "0 auto" }}>
+        <div style={{ maxWidth: "1000px", margin: "0 auto" }}>
           <div className={styles.flex} style={{ marginBottom: "16px" }}>
             <Accordion categories={values.categories} />
           </div>
@@ -101,6 +111,18 @@ export const Calculator = () => {
   };
 
   const Contacts = () => {
+    const [fileError, setFileError] = useState(null);
+
+    const handleFileChange = (event, setFieldValue) => {
+      const file = event.currentTarget.files[0];
+      if (file && file.size > 5242880) {
+        setFileError("File size is too large");
+        setFieldValue("file", null);
+      } else {
+        setFileError(null);
+        setFieldValue("file", file);
+      }
+    };
     return (
       <>
         <p>Пожалуйста, заполните форму</p>
@@ -108,33 +130,48 @@ export const Calculator = () => {
           <div className={styles.flex}>
             <div className={styles.Input}>
               <Field type="text" name="name" placeholder="Ваше имя" />
+              <ErrorMessage
+                name="name"
+                component="div"
+                className={styles.error}
+              />
             </div>
             <div className={styles.Input}>
               <Field type="text" name="phone" placeholder="Номер телефона" />
+              <ErrorMessage
+                name="phone"
+                component="div"
+                className={styles.error}
+              />
             </div>
           </div>
           <div className={styles.flex}>
             <div className={styles.Input}>
-              <Field
-                as="select"
-                name="select"
-                placeholder="Предпочитаемый способ связи"
-              >
-                <option value="">Предпочитаемый способ связи</option>
-                <option value="option1">Пункт 1</option>
-                <option value="option2">Пункт 2</option>
-              </Field>
+              <Field type="email" name="email" placeholder="Ваш email" />
+              <ErrorMessage
+                name="email"
+                component="div"
+                className={styles.error}
+              />
             </div>
             <div className={styles.Input}>
-              <Field
-                as="select"
-                name="select"
-                placeholder="Предпочитаемый способ связи"
-              >
-                <option value="">Предпочитаемый способ связи</option>
-                <option value="option1">Пункт 1</option>
-                <option value="option2">Пункт 2</option>
+              <Field name="file">
+                {({ field, form }) => (
+                  <input
+                    type="file"
+                    onChange={(event) =>
+                      handleFileChange(event, form.setFieldValue)
+                    }
+                    accept="application/pdf,doc,docx,txt/*"
+                  />
+                )}
               </Field>
+              {fileError && <div className={styles.error}>{fileError}</div>}
+              <ErrorMessage
+                name="file"
+                component="div"
+                className={styles.error}
+              />
             </div>
           </div>
         </div>
@@ -143,6 +180,12 @@ export const Calculator = () => {
   };
 
   const ObjectSquere = () => {
+    const [field, meta, helpers] = useField("square");
+
+    const handleChange = (e) => {
+      const value = e.target.value.replace(/\D/g, ""); // Оставляем только цифры
+      helpers.setValue(value);
+    };
     return (
       <>
         <p>Введите площадь объекта</p>
@@ -153,6 +196,13 @@ export const Calculator = () => {
                 type="text"
                 name="square"
                 placeholder="Площадь объекта, от 11 до 500 м&sup2;"
+                value={field.value ? `${field.value} м²` : ""}
+                onChange={handleChange}
+              />
+              <ErrorMessage
+                name="square"
+                component="div"
+                className={styles.error}
               />
             </div>
           </div>
@@ -166,7 +216,7 @@ export const Calculator = () => {
       <>
         <p>Выберите этап строительства</p>
         <div style={{ maxWidth: "840px", margin: "0 auto" }}>
-          <div className={styles.flex}>
+          <div className={styles.flex} style={{rowGap: "9px"}}>
             <Field
               type="radio"
               id="design"
@@ -265,7 +315,7 @@ export const Calculator = () => {
   let { title, item } = getStepInfo(step, subStep);
 
   return (
-    <section>
+    <section id="calculator">
       <header className={styles.header}>
         <h4>Калькулятор</h4>
         <h2>{title}</h2>

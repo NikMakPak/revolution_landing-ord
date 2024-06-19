@@ -6,8 +6,17 @@
   max-width: 1130px;
   margin: 0 auto;
   position: relative;
-  & > p {
+
+  @media (max-width: 760px) {
+    text-align: left;
+  }
+
+  &>p {
     color: #848487;
+
+    @media (max-width: 500px) {
+      max-width: 150px;
+    }
   }
 }
 
@@ -15,6 +24,11 @@
   position: absolute;
   top: 16px;
   right: 24px;
+
+  @media (max-width: 500px) {
+    top: 36px;
+  }
+
   button {
     font-size: 14px;
     border-radius: 10px;
@@ -30,9 +44,10 @@
   padding: 0.7em 1.2em;
   background-color: #49494e;
   transition: all .2s ease-in-out;
+
   &:hover {
     opacity: 0.8;
   }
+
   margin-right: 12px;
 }
-

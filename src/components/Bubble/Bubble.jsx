@@ -7,11 +7,11 @@ import { useScreenWidth } from "../../hooks/useScreenWidth";
 const Bubble = ({
   id,
   title,
-  position: { x, y },
+  position,
   imgSrc,
   link,
   setActiveProduct = () => {},
-  parentRef,
+  isAdaptive,
   setOpenModal,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -30,56 +30,40 @@ const Bubble = ({
   const blockRef = useRef(null);
 
   useEffect(() => {
-    if (parentRef?.current && blockRef?.current) {
-      const { width: parentWidth, height: parentHeight } = parentRef.current.getBoundingClientRect();
-
-      const relativePosition = getRelativePosition(
-        x,
-        y,
-        parentWidth,
-        parentHeight
-      );
-
-      blockRef.current.style.left = `${relativePosition.x}%`;
-      blockRef.current.style.top = `${relativePosition.y}%`;
-    } else {
+    const { x, y } = getCurrentPosition();
+    if (blockRef?.current) {
       blockRef.current.style.left = `${x}px`;
       blockRef.current.style.top = `${y}px`;
     }
-  }, [parentRef, x, y]);
+  }, [screenWidth]);
 
-  function getRelativePosition(x, y, parentWidth, parentHeight) {
-    const relativeX = (x / parentWidth) * 100;
-    const relativeY = (y / parentHeight) * 100;
-    return {
-      x: relativeX,
-      y: relativeY,
-    };
-  }
-
+  const getCurrentPosition = () => {
+    const keys = Object.keys(position);
+    if (keys.length === 2 && keys.includes("x") && keys.includes("y"))
+      return position;
+    if (screenWidth >= 1400) {
+      return position[1440];
+    } else if (screenWidth >= 750) {
+      return position[768];
+    } else {
+      return position[375];
+    }
+  };
   return (
-    <div
-      className={styles.wrapper}
-      ref={blockRef}
-    >
+    <div className={isAdaptive ? styles.wrapperAdapt : styles.wrapper} ref={blockRef}>
       <motion.div
         onMouseEnter={() => onEnter()}
         onMouseLeave={() => onLeave()}
         onClick={() => {
-          if (screenWidth <= 1140) {
-            setOpenModal(true)
-          } else
-            window.open(`https://smrevolution.ru/${link}`, "_blank")
-          }
-        }
+          if (screenWidth <= 1440) {
+            setOpenModal(true);
+          } else window.open(`https://smrevolution.ru/${link}`, "_blank");
+        }}
         initial={{ scale: 1 }}
         whileHover={{ scale: 1.2 }}
         className={styles.bubble}
       >
-        <img
-          src={imgSrc}
-          alt={title}
-        />
+        <img src={imgSrc} alt={title} />
       </motion.div>
       <div className={styles.titleWrap}>
         {isHovered && (
