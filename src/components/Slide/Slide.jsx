@@ -5,19 +5,14 @@ import styles from "./Slide.module.scss";
 import Bubble from "../Bubble/Bubble";
 import { BottomSheet } from "../BottomSheet/BottomSheet";
 import { useScreenWidth } from "../../hooks/useScreenWidth";
-import { useSwiper } from "swiper/react";
 
-export const Slide = ({ imgSrc, data }) => {
+export const Slide = ({ imgSrc, data, setIsInteracts }) => {
   const [activeProduct, setActiveProduct] = useState(null);
   const [isOpen, setOpen] = useState(false);
   const screenWidth = useScreenWidth();
-  const swiper = useSwiper();
 
   useEffect(() => {
-    if (swiper) {
-      if (isOpen) swiper?.autoplay?.stop();
-      // else {debugger; swiper?.autoplay?.resume()};
-    }
+    setIsInteracts(isOpen);
   }, [isOpen]);
 
   return (

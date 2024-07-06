@@ -30,7 +30,7 @@ const slides = [
         subtitle: "Шустрый «Звонарь»",
       },
       content: [
-        "Поддерживает индивидуальные параметры микроклимата в помещении — температура, влажность, СО2",
+        "Поддерживает индивидуальные параметры микроклимата в помещении — температура, влажность, Сo2",
         "Дистанционное управление позволяет подготовить избу или хоромы к Вашему приезду",
       ],
       link: "#",
@@ -147,7 +147,18 @@ const slides = [
 
 export const Slider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isInteracts, setIsInteracts] = useState(false);
+  const [swiper, setSwiper] = useState(null);
   const screenWidth = useScreenWidth();
+
+  useEffect(() => {
+    if (isInteracts) {
+      console.log("stop");
+      swiper?.autoplay.stop();
+    } else {
+      swiper?.autoplay.start();
+    }
+  }, [isInteracts]);
 
   return (
     <Swiper
@@ -155,19 +166,37 @@ export const Slider = () => {
       loop={true}
       spaceBetween={30}
       centeredSlides={true}
-      keyboard={{ enabled: true }}
       allowTouchMove={screenWidth > 1440}
       onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
       autoplay={{
         delay: 5000,
         disableOnInteraction: false,
-        pauseOnMouseEnter: false,
       }}
+      onTouchStart={() => {
+        setIsInteracts(true);
+      }}
+      onTouchEnd={() => {
+        setIsInteracts(false);
+      }}
+      onSwiper={setSwiper}
       modules={[Autoplay, Pagination, Navigation]}
     >
       {slides.map(({ slideBgSrc, infoWinData }, i) => (
-        <SwiperSlide key={i}>
-          <Slide key={i} imgSrc={slideBgSrc} data={infoWinData} />
+        <SwiperSlide
+          key={i}
+          onMouseEnter={() => {
+            setIsInteracts(true);
+          }}
+          onMouseLeave={() => {
+            setIsInteracts(false);
+          }}
+        >
+          <Slide
+            key={i}
+            imgSrc={slideBgSrc}
+            data={infoWinData}
+            setIsInteracts={setIsInteracts}
+          />
         </SwiperSlide>
       ))}
       <Controls />
@@ -176,7 +205,11 @@ export const Slider = () => {
           Нажмите на любой объект, <br /> Передвигайтесь при помощи пальцев
         </p>
       )}
-      <InstaProgressBar slides={slides} activeIndex={activeIndex} />
+      <InstaProgressBar
+        slides={slides}
+        activeIndex={activeIndex}
+        isInteracts={isInteracts}
+      />
     </Swiper>
   );
 };

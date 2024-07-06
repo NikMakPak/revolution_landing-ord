@@ -12,16 +12,15 @@ export const BottomSheet = ({ isOpen, setOpen, data, activeProduct }) => {
   };
 
   return (
-    <Sheet
-      isOpen={isOpen}
-      onClose={handleClose}
-      detent="content-height"
-    >
+    <Sheet isOpen={isOpen} onClose={handleClose} detent="content-height">
       <Sheet.Container>
         <Sheet.Header />
         <Sheet.Content style={{ paddingBottom: ref.current?.y }}>
           <Sheet.Scroller>
-            <aside className={styles.win}>
+            <aside
+              className={styles.win}
+              style={isOpen && { borderRadius: "0px" }}
+            >
               <header>
                 <p>{data.header.title}</p>
                 <h3>{data.header.subtitle}</h3>
