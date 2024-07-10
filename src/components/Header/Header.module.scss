@@ -17,9 +17,9 @@
     }
     .logo {
       @media (max-width: 500px) {
-          width: 111px;
-          height: 50px;
-        }
+        width: 111px;
+        height: 50px;
+      }
     }
   }
   .ul {
@@ -32,6 +32,9 @@
       display: none;
       min-width: auto;
     }
+    li {
+      cursor: pointer;
+    }
   }
   .contacts {
     gap: 16px;
@@ -41,8 +44,8 @@
       gap: 16px;
       place-items: center;
       @media (max-width: 500px) {
-          display: none;
-        }
+        display: none;
+      }
     }
   }
   .link {

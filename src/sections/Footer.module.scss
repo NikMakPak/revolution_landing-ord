@@ -77,9 +77,10 @@
       display: flex;
       justify-content: space-between;
       @media (max-width: 1105px) {
-        flex-wrap: wrap;
+        flex-wrap: wrap-reverse;
         justify-content: flex-start;
         gap: 90px;
+        margin-bottom: 60px;
       }
       .block a {
         font-size: 24px;
@@ -97,9 +98,9 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 32px;
+  column-gap: 32px;
   @media (max-width: 768px) {
-    display: block;
+   justify-content: center;
   }
   ul {
     display: flex;

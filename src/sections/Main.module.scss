@@ -9,6 +9,14 @@
 
     p {
       color: #ff98b1;
+
+      @media (max-width: 600px) {
+        font-size: 16px;
+      }
+
+      @media (max-width: 1400px) {
+        font-size: 18px;
+      }
     }
 
     h1 {
