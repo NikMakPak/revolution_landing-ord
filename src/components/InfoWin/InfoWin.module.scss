@@ -1,0 +1,36 @@
+.win {
+  border-radius: 24px;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  padding: 28px 24px 24px 24px;
+  max-width: 500px;
+  min-height: 570px;
+  max-height: 690px;
+  background-color: var(--white);
+  color: var(--background);
+  box-shadow: 0px 4px 64px 0px #0000003d;
+
+  header {
+    p {
+      margin: 0;
+      margin-bottom: 16px;
+      color: #999;
+    }
+  }
+
+  .content {
+    margin-top: 32px;
+    margin-bottom: 24px;
+    font-size: 18px;
+    color: #000;
+    font-weight: 400;
+  }
+
+  .scrollZone {
+    overflow-y: scroll;
+    min-height: 100px;
+    max-height: 410px;
+    display: grid;
+    gap: 8px;
+  }
+}

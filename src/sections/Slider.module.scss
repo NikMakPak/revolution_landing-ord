@@ -1,0 +1,29 @@
+.img{
+    width: 1350px;
+}
+
+.storiesSlider {
+  width: 100%;
+  max-width: 1400px;
+}
+
+.mySwiper {
+  width: 450px;
+  height: 800px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.caption{
+  position: absolute;
+  left: 50%; 
+  transform: translateX(-50%); 
+  bottom: 10px;
+  text-align: center;
+  z-index: 2;
+  @media (max-width: 768px) {
+    text-align: left;
+    transform: translateX(-90%); 
+    bottom: 20px;
+  }
+}

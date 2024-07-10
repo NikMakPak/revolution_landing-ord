@@ -1,0 +1,70 @@
+// .modal {
+//   &.ReactModal__Content--after-open {
+//     opacity: 1; // Прозрачность при открытии
+//   }
+
+//   &.ReactModal__Content--before-close {
+//     opacity: 0; // Прозрачность при закрытии
+//   }
+// }
+
+.container {
+  position: relative;
+  h5 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+}
+
+.title {
+  margin-bottom: 40px;
+  line-height: 41.6px;
+  font-size: 32px;
+}
+.linkContainer {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.link {
+  display: flex;
+  gap: 24px;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #e3e3e3;
+  outline: none;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  border: 1px solid #46464b;
+  border-radius: 16px;
+  transition: background-color .2s ease-in-out;
+  padding: 20px;
+  cursor: pointer;
+  p {
+    margin: 0;
+  }
+  &:hover {
+    background-color: #404045;
+  }
+}
+
+.phoneLink{
+  flex: 1;
+  min-width: 265px;
+  color: #fff;
+  p {
+    font-size: 24px;
+  }
+}
+.closeButton {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+}

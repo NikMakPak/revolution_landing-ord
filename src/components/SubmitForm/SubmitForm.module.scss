@@ -1,0 +1,66 @@
+.error {
+  border: 1px solid #fb3466 !important;
+  background-color: transparent !important;
+}
+.errMsg{
+  color:#ff98b1 ;
+  font-size: 16px;
+}
+.wrapper {
+  flex: 1;
+  min-width: 300px;
+  background-color: var(--white);
+  border-radius: 24px;
+  padding: 24px;
+  color: var(--background);
+  padding-top: 32px;
+  header {
+    p {
+      margin: 16px 0 10px 0;
+      color: #999;
+      max-width: 310px;
+    }
+  }
+  .Input {
+    margin-top: 12px;
+    input,
+    select {
+      background-color: #f8f8fe;
+      color: #68687b;
+      outline: none;
+      font-size: 20px;
+      line-height: 28px;
+      letter-spacing: -0.02em;
+      padding: 20px;
+      width: 100%;
+      border: 1px solid #ccccdf;
+      border-radius: 16px;
+      transition: border .2s ease-in-out;
+    }
+    input::placeholder {
+      color: #b8b8cb;
+    }
+    input:focus {
+      border: 1px solid #9a9ad4;
+    }
+  }
+  .Checkbox {
+    margin: 40px 0;
+    input[type="checkbox"] {
+      transform: scale(2);
+      margin-right: 16px;
+      margin-left: 8px;
+    }
+
+    label,
+    a {
+      font-size: 18px;
+      color: #68687b;
+      line-height: 25.2px;
+      letter-spacing: -0.02em;
+    }
+    a {
+      color: var(--accent);
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.main {
+  position: relative;
+
+  .title {
+    text-align: center;
+    margin: 0 auto;
+    margin-block: 130px 160px;
+    max-width: 920px;
+
+    p {
+      color: #ff98b1;
+    }
+
+    h1 {
+      margin-bottom: 50px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100vw;
+      height: 200vh;
+      top: 0%;
+      z-index: -1;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(rgba(49, 46, 233, 0.25), #000);
+    }
+  }
+}
+
+.img {
+  width: 1100px;
+  position: relative;
+  height: 800px;
+  margin: 0 auto;
+  background-image: url("../assets/ipadAir.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  @media (max-width: 1400px) {
+    width: 720px;
+    height: 540px;
+  }
+
+  @media (max-width: 750px) {
+    width: 340px;
+    height: 250px;
+  }
+}

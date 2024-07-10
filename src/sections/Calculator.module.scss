@@ -1,0 +1,174 @@
+.header {
+  text-align: center;
+  margin-bottom: 95px;
+
+  h4 {
+    color: #98ffe0;
+    margin-bottom: 24px;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 9px;
+  justify-content: center;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"]:checked+label {
+    border: 1px solid #9a9ad4;
+  }
+        @media (max-width: 450px) {
+            justify-content: left;
+        }
+}
+
+.cardImg,
+input,
+.card,
+select {
+  background-color: #323236;
+  color: #e3e3e3;
+  outline: none;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  border: 1px solid #46464b;
+  border-radius: 16px;
+  transition: border, background-color .2s ease-in-out;
+
+  @media (max-width: 1105px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 760px) {
+    font-size: 16px;
+  }
+}
+
+.cardImg,
+.card {
+  padding: 20px;
+  cursor: pointer;
+
+  p {
+    margin: 0;
+  }
+
+  &:hover {
+    background-color: #404045;
+  }
+}
+
+.cardImg {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.steps {
+  margin: 0 auto;
+  max-width: 905px;
+  padding-inline: 30px;
+
+  @media (max-width: 1105px) {
+    padding-right: 37px;
+    padding-left: 60px;
+  }
+
+  @media (max-width: 500px) {
+    padding-right: 29px;
+    padding-left: 29px;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .circle {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    background: #1a1a1d;
+  }
+
+  .line {
+    width: 100%;
+    height: 1px;
+    background: #1a1a1d;
+  }
+
+  .active {
+    background: var(--accent);
+  }
+}
+
+.stepTitle {
+  .centerT {
+    @media (max-width: 1105px) {
+      margin-right: 30px;
+    }
+
+    @media (max-width: 500px) {
+      margin-right: 18px;
+    }
+  }
+
+  p {
+    width: 304px;
+    text-align: center;
+
+    @media (max-width: 1105px) {
+      width: auto;
+    }
+  }
+
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+}
+
+.Input {
+  margin-top: 12px;
+  flex: 1;
+  @media (max-width: 760px) {
+      min-width: 300px;
+    }
+
+  input {
+    width: 100%;
+    padding: 20px;
+  }
+
+  input::placeholder {
+    color: #848487;
+  }
+
+  input:focus {
+    border: 1px solid #9a9ad4;
+  }
+
+  select {
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  text-align: left;
+}

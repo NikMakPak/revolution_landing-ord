@@ -1,0 +1,24 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+  padding: 24px;
+  background-size: cover;
+  border-radius: 24px;
+  z-index: 0;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+  }
+}
+.card {
+  max-width: 450px;
+}

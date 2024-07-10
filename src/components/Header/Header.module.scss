@@ -1,20 +1,91 @@
-.nav{
-    border:1px solid #fff;
+.header {
+  nav {
+    position: relative;
+    z-index: 3;
     display: flex;
     place-items: center;
     justify-content: space-between;
-}
-.ul{
+    gap: 20px;
+    background: linear-gradient(180deg, #000 -95%, transparent 100%);
+
+    button {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 18.53px;
+      letter-spacing: -0.02em;
+      text-align: left;
+    }
+    .logo {
+      @media (max-width: 500px) {
+          width: 111px;
+          height: 50px;
+        }
+    }
+  }
+  .ul {
     display: flex;
-    list-style-type: none;
-    gap: 32px;
-}
-.contacts{
+    justify-content: space-between;
+    width: 50%;
+    min-width: 630px;
+    max-width: 1000px;
+    @media (max-width: 1105px) {
+      display: none;
+      min-width: auto;
+    }
+  }
+  .contacts {
     gap: 16px;
     display: flex;
-    .socials{
-        display: flex;
-        gap: 8px;
-        place-items: center;
+    .socials {
+      display: flex;
+      gap: 16px;
+      place-items: center;
+      @media (max-width: 500px) {
+          display: none;
+        }
     }
+  }
+  .link {
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .burger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    @media (max-width: 1105px) {
+      display: block;
+    }
+  }
+  .burgerMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      li {
+        a {
+          font-size: 56px;
+        }
+        margin-bottom: 24px;
+      }
+    }
+  }
 }
