@@ -8,6 +8,24 @@ import Slide4 from "../assets/slide4.png";
 
 // product images
 import Camera from "../assets/camera.webp";
+import Mouse from "../assets/mouse.png";
+import Radar from "../assets/radar.png";
+import Door from "../assets/door.png";
+import Handler from "../assets/handler.png";
+
+import Steam from "../assets/steam.png";
+import tempRadar from "../assets/tempRadar.png";
+import Dish from "../assets/dish.png";
+
+import Termo from "../assets/termo.png";
+import Temp from "../assets/temperature.png";
+import Convec from "../assets/convector.png";
+import Battery from "../assets/battery.png";
+
+import Lamp from "../assets/lamp.png";
+import Control from "../assets/control.png";
+import Ardu from "../assets/ardu.png";
+import Blinder from "../assets/blinder.png";
 
 import { Slide } from "../components/Slide/Slide";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -39,22 +57,36 @@ const slides = [
           id: uuidv4(),
           brand: "SM Revolution",
           title: "Камеры видеонаблюдения",
-          position: { x: 600, y: 88 },
+          position: { x: 540, y: 70 },
           imgSrc: Camera,
         },
         {
           id: uuidv4(),
           brand: "SM Revolution",
-          title: "Датчик размыкания",
-          position: { x: 890, y: 340 },
-          imgSrc: Camera,
+          title: "Датчик воды",
+          position: { x: 610, y: 315 },
+          imgSrc: Mouse,
         },
         {
           id: uuidv4(),
           brand: "SM Revolution",
           title: "Датчики движения",
-          position: { x: 1230, y: 510 },
-          imgSrc: Camera,
+          position: { x: 758, y: 118 },
+          imgSrc: Radar,
+        },
+        {
+          id: uuidv4(),
+          brand: "SM Revolution",
+          title: "Датчики размыкания",
+          position: { x: 1183, y: 141 },
+          imgSrc: Handler,
+        },
+        {
+          id: uuidv4(),
+          brand: "SM Revolution",
+          title: "Дверной замок",
+          position: { x: 1056, y: 365 },
+          imgSrc: Door,
         },
       ],
     },
@@ -64,25 +96,34 @@ const slides = [
     infoWinData: {
       header: {
         title: "Оборудование",
-        subtitle: "Умное освещение",
+        subtitle: "Умное «Светило»",
       },
-      content:
-        "Умноже освещение от Smart Revoluition позволяет комбинировать различные типы освещения с целью создания комфортных условий в любое время суток. Управлять освещением возможно как при помощи обычных выключателей, так и дистанционно, при помощи мобильного приложения или голосовых помощников",
+      content: [
+        "Умноже освещение от Smart Revoluition позволяет комбинировать различные типы освещения с целью создания комфортных условий в любое время суток.",
+        "Управлять освещением возможно как при помощи обычных выключателей, так и дистанционно, при помощи мобильного приложения или голосовых помощников",
+      ],
       link: "#",
       products: [
         {
           id: uuidv4(),
           brand: "SM Revolution",
-          title: "Камеры видеонаблюдения1",
-          position: { x: 600, y: 88 },
-          imgSrc: Camera,
+          title: "Датчик дыма",
+          position: { x: 540, y: 88 },
+          imgSrc: Steam,
         },
         {
           id: uuidv4(),
           brand: "SM Revolution",
-          title: "Камеры видеонаблюдения2",
-          position: { x: 880, y: 350 },
-          imgSrc: Camera,
+          title: "WI-FI Lamp",
+          position: { x: 830, y: 343 },
+          imgSrc: tempRadar,
+        },
+        {
+          id: uuidv4(),
+          brand: "SM Revolution",
+          title: "Датчик воды",
+          position: { x: 1124, y: 510 },
+          imgSrc: Dish,
         },
       ],
     },
@@ -92,25 +133,41 @@ const slides = [
     infoWinData: {
       header: {
         title: "Оборудование",
-        subtitle: "Умное освещение",
+        subtitle: "Климатный «Шаман»",
       },
-      content:
-        "Умноже освещение от Smart Revoluition позволяет комбинировать различные типы освещения с целью создания комфортных условий в любое время суток. Управлять освещением возможно как при помощи обычных выключателей, так и дистанционно, при помощи мобильного приложения или голосовых помощников",
+      content: [
+        "Поддерживает индивидуальные параметры микроклимата в помещении — температура, влажность, СО2",
+        "Дистанционное управление позволяет подготовить избу или хоромы к Вашему приезду",
+      ],
       link: "#",
       products: [
         {
           id: uuidv4(),
           brand: "SM Revolution",
-          title: "Камеры видеонаблюдения1",
-          position: { x: 600, y: 88 },
-          imgSrc: Camera,
+          title: "Смарт ковер",
+          position: { x: 650, y: 560 },
+          imgSrc: Battery,
         },
         {
           id: uuidv4(),
           brand: "SM Revolution",
-          title: "Камеры видеонаблюдения2",
-          position: { x: 880, y: 350 },
-          imgSrc: Camera,
+          title: "Конвектор с Wi-Fi",
+          position: { x: 830, y: 505 },
+          imgSrc: Convec,
+        },
+        {
+          id: uuidv4(),
+          brand: "SM Revolution",
+          title: "Датчики температуры и влажности",
+          position: { x: 930, y: 225 },
+          imgSrc: Temp,
+        },
+        {
+          id: uuidv4(),
+          brand: "SM Revolution",
+          title: "Термостат",
+          position: { x: 1170, y: 370 },
+          imgSrc: Termo,
         },
       ],
     },
@@ -120,25 +177,38 @@ const slides = [
     infoWinData: {
       header: {
         title: "Оборудование",
-        subtitle: "Умное освещение",
+        subtitle: "Интеллектуальный «Страж»",
       },
-      content:
-        "Умноже освещение от Smart Revoluition позволяет комбинировать различные типы освещения с целью создания комфортных условий в любое время суток. Управлять освещением возможно как при помощи обычных выключателей, так и дистанционно, при помощи мобильного приложения или голосовых помощников",
+      content: ["Обеспечивает защиту и безопасность вашей избы в режиме 24/7"],
       link: "#",
       products: [
         {
           id: uuidv4(),
           brand: "SM Revolution",
-          title: "Камеры видеонаблюдения1",
-          position: { x: 600, y: 88 },
-          imgSrc: Camera,
+          title: "WI-FI Лампа",
+          position: { x: 580, y: 50 },
+          imgSrc: Lamp,
         },
         {
           id: uuidv4(),
           brand: "SM Revolution",
-          title: "Камеры видеонаблюдения2",
-          position: { x: 880, y: 350 },
-          imgSrc: Camera,
+          title: "Умный выключатель",
+          position: { x: 730, y: 370 },
+          imgSrc: Control,
+        },
+        {
+          id: uuidv4(),
+          brand: "SM Revolution",
+          title: "Умный переключатель",
+          position: { x: 1055, y: 330 },
+          imgSrc: Ardu,
+        },
+        {
+          id: uuidv4(),
+          brand: "SM Revolution",
+          title: "Система управления шторами",
+          position: { x: 1153, y: 70 },
+          imgSrc: Blinder,
         },
       ],
     },

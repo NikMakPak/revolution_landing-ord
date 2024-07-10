@@ -19,9 +19,9 @@ const products = [
     brand: "SM Revolution",
     title: "Датчик дыма",
     position: {
-      1440: { x: 80, y: 340 },
-      768: { x: 20, y: 230 },
-      375: { x: 0, y: 105 },
+      1440: { x: 80, y: 370 },
+      768: { x: 20, y: 260 },
+      375: { x: 0, y: 135 },
     },
     imgSrc: Door,
   },
@@ -30,9 +30,9 @@ const products = [
     brand: "SM Revolution",
     title: "WI-FI Lamp",
     position: {
-      1440: { x: 155, y: 215 },
-      768: { x: 70, y: 148 },
-      375: { x: 28, y: 66 },
+      1440: { x: 155, y: 205 },
+      768: { x: 70, y: 138 },
+      375: { x: 28, y: 56 },
     },
     imgSrc: Handler,
   },
@@ -95,7 +95,12 @@ export const Main = () => {
       </div>
       <div className={styles.img} ref={imgRef}>
         {products.map((product) => (
-          <Bubble key={product.id} isAdaptive={true} parentRef={imgRef} {...product} />
+          <Bubble
+            key={product.id}
+            isAdaptive={true}
+            parentRef={imgRef}
+            {...product}
+          />
         ))}
       </div>
     </main>
