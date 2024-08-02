@@ -72,11 +72,11 @@ const validationSchema = Yup.object()
       .matches(/^\d+$/, "Введите корректное значение площади")
       .required("Обязательное поле"),
     phone: Yup.string()
-      .matches(/^[0-9]+$/, "Only numbers are allowed")
+      .matches(/^[0-9]+$/, "Введите корректный номер")
       .nullable(),
-    email: Yup.string().email("Invalid email format").nullable(),
+    email: Yup.string().email("Неправильный формат почты @").nullable(),
     file: Yup.mixed()
-      .test("fileSize", "File size is too large", (value) => {
+      .test("fileSize", "Размер файла превышает 5 МБ", (value) => {
         return value ? value.size <= 5242880 : true;
       })
       .nullable()
@@ -84,16 +84,17 @@ const validationSchema = Yup.object()
   })
   .test(
     "phoneOrEmail",
-    "At least one of phone or email is required",
+    "Нужен или телефон или почта",
     function (value) {
       return value.phone || value.email;
     }
   );
 
 export const StepsForm = ({ step, increment, subStep, decrement, item }) => {
-
-  const handleSubmit = (values) => {
+  const handleSubmit = (values, { resetForm }) => {
+    alert("Данные успешно отправлены!");
     console.log(values);
+    resetForm();
   };
 
   return (
@@ -102,7 +103,7 @@ export const StepsForm = ({ step, increment, subStep, decrement, item }) => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      {({ isSubmitting, dirty, isValid, values }) => (
+      {({ dirty, isValid, values }) => (
         <Form className={styles.formBg}>
           {item}
           {step === 3 && (
@@ -112,7 +113,6 @@ export const StepsForm = ({ step, increment, subStep, decrement, item }) => {
               <button
                 className="btn btn--modified"
                 type="submit"
-                // disabled={isSubmitting}
                 disabled={!isValid || !dirty || !(values.phone || values.email)}
               >
                 Отправить расчет
@@ -142,6 +142,3 @@ export const StepsForm = ({ step, increment, subStep, decrement, item }) => {
     </Formik>
   );
 };
-
-
-

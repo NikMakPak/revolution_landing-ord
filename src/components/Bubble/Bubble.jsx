@@ -50,14 +50,21 @@ const Bubble = ({
     }
   };
   return (
-    <div className={isAdaptive ? styles.wrapperAdapt : styles.wrapper} ref={blockRef}>
+    <div
+      className={isAdaptive ? styles.wrapperAdapt : styles.wrapper}
+      ref={blockRef}
+    >
       <motion.div
         onMouseEnter={() => onEnter()}
         onMouseLeave={() => onLeave()}
         onClick={() => {
-          if (screenWidth <= 1440) {
+          if (screenWidth <= 1440 && !isAdaptive) {
             setOpenModal(true);
-          } else window.open(`https://smrevolution.ru/${link}`, "_blank");
+          } else
+            window.open(
+              `/shop/${link || "#"}`,
+              "_blank"
+            );
         }}
         initial={{ scale: 1 }}
         whileHover={{ scale: 1.2 }}

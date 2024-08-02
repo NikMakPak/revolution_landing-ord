@@ -7,6 +7,11 @@ import Dash from "../../assets/electric.svg";
 import Net from "../../assets/net.svg";
 import Router from "../../assets/router.svg";
 import Security from "../../assets/security.svg";
+import Water from "../../assets/water.svg";
+import Video from "../../assets/video.svg";
+import Temperature from "../../assets/temperature.svg";
+import Lamp from "../../assets/lamp.svg";
+import Home from "../../assets/home.svg";
 
 import styles from "./Accordion.module.scss";
 
@@ -25,7 +30,7 @@ const categories = [
   },
   {
     title: "Обогрев или охлаждение помещений",
-    iconSrc: Dash,
+    iconSrc: Temperature,
     options: [
       "Настенные радиаторы (батареи отопления)",
       "Внутрипольные конвекторы",
@@ -56,7 +61,7 @@ const categories = [
   },
   {
     title: "Аудиовидео-системы",
-    iconSrc: Dash,
+    iconSrc: Video,
     options: [
       "Домашний кинотеатр",
       "Мультирум-система (единая звуковая дорожка в каждом помещении)",
@@ -66,7 +71,7 @@ const categories = [
   },
   {
     title: "Входная группа объекта",
-    iconSrc: Dash,
+    iconSrc: Home,
     options: [
       "Интеграция с подъездным домофоном",
       "Домофоны для ворот на участке",
@@ -83,7 +88,7 @@ const categories = [
   },
   {
     title: "Управление освещением",
-    iconSrc: Dash,
+    iconSrc: Lamp,
     options: [
       "Плавное включение/отключение световых приборов",
       "Возможность диммирование света",
@@ -96,7 +101,7 @@ const categories = [
   },
   {
     title: "Контроль воздуха и воды",
-    iconSrc: Dash,
+    iconSrc: Water,
     options: [
       "Автоматизация приточной вентиляции",
       "Использование увлажнителей воздуха",
@@ -221,7 +226,11 @@ export const AccordionItem = ({ onClick, isOpen, category, index }) => {
           }}
         >
           <h5>{category.title}</h5>
-          <img src={categories[index].iconSrc} alt="icon" style={{ marginRight: "8px" }} />
+          <img
+            src={categories[index].iconSrc}
+            alt="icon"
+            style={{ marginRight: "8px" }}
+          />
         </div>
         <div
           className={styles.collapse}

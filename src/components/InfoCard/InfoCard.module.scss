@@ -3,20 +3,23 @@
   max-height: 96px;
   place-items: center;
   border-radius: 16px 16px 10px 10px;
-  background-color: #f8f8fe;
+  background-color: #fef8f8;
   color: var(--background);
   padding: 16px;
   display: flex;
   gap: 19px;
   font-size: 19px;
   transition: all .2s ease-in-out;
+  @media (max-width: 600px) {
+      border-radius: 16px;
+  }
 
   p {
     font-weight: 400;
     margin: 0;
   }
   img {
-    max-width: 64px;
+    width: 64px;
     max-height: 64px;
   }
   &:hover {

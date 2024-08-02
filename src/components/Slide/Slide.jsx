@@ -23,7 +23,7 @@ export const Slide = ({ imgSrc, data, setIsInteracts }) => {
         alt="slide's background image"
         loading="lazy"
       />
-      <div class="swiper-lazy-preloader"></div>
+      <div className="swiper-lazy-preloader"></div>
       {screenWidth <= 1440 ? (
         <BottomSheet
           data={data}

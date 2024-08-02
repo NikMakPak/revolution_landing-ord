@@ -21,9 +21,17 @@
   .content {
     margin-top: 32px;
     margin-bottom: 24px;
-    font-size: 18px;
-    color: #000;
-    font-weight: 400;
+    padding-right: 50px;
+    display: grid;
+    gap: 20px;
+
+    p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 18px;
+      color: #000;
+    }
   }
 
   .scrollZone {

@@ -11,7 +11,14 @@ export const InfoWin = ({ data, activeProduct }) => {
         <p>{data.header.title}</p>
         <h3>{data.header.subtitle}</h3>
       </header>
-      <p className={styles.content}>{data.content}</p>
+      <div className={styles.content}>
+        {data.content.map((contentItem) => (
+          <p
+            key={contentItem}
+            dangerouslySetInnerHTML={{ __html: contentItem }}
+          />
+        ))}
+      </div>
       <ul className={styles.scrollZone}>
         {data.products.map((product) => (
           <InfoCard
@@ -29,7 +36,7 @@ export const InfoWin = ({ data, activeProduct }) => {
         ))}
       </ul>
       <a
-        href={data.link}
+        href={`/shop/${data.link}`}
         className="btn btn--modified"
         target="_blank"
         rel="noopener noreferrer"

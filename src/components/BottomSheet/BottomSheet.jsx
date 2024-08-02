@@ -1,5 +1,5 @@
 import { Sheet } from "react-modal-sheet";
-import { useState, useRef } from "react";
+import { useRef } from "react";
 
 import styles from "./BottomSheet.module.scss";
 import { InfoCard } from "../InfoCard/InfoCard";
@@ -25,7 +25,14 @@ export const BottomSheet = ({ isOpen, setOpen, data, activeProduct }) => {
                 <p>{data.header.title}</p>
                 <h3>{data.header.subtitle}</h3>
               </header>
-              <p className={styles.content}>{data.content}</p>
+              <div className={styles.content}>
+                {data.content.map((contentItem) => (
+                  <p
+                    key={contentItem}
+                    dangerouslySetInnerHTML={{ __html: contentItem }}
+                  />
+                ))}
+              </div>
               <ul className={styles.scrollZone}>
                 {data.products.map((product) => (
                   <InfoCard
@@ -44,7 +51,7 @@ export const BottomSheet = ({ isOpen, setOpen, data, activeProduct }) => {
                 ))}
               </ul>
               <a
-                href={data.link}
+                href={`/shop/${data.link}`}
                 className="btn btn--modified"
                 target="_blank"
                 rel="noopener noreferrer"

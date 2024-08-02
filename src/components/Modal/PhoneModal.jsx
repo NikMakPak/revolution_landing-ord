@@ -16,6 +16,7 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     backgroundColor: "rgba(255, 255, 255, 0.05)",
     backdropFilter: "blur(50px)",
+    "-webkit-backdrop-filter": "blur(50px)",
     border: "1px solid #46464b",
     borderRadius: "16px",
     width: "100%",

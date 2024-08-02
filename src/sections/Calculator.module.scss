@@ -21,9 +21,10 @@
   input[type="radio"]:checked+label {
     border: 1px solid #9a9ad4;
   }
-        @media (max-width: 450px) {
-            justify-content: left;
-        }
+
+  @media (max-width: 450px) {
+    justify-content: left;
+  }
 }
 
 .cardImg,
@@ -71,6 +72,7 @@ select {
   align-items: center;
   gap: 16px;
   flex: 1;
+  min-width: 90px;
 }
 
 .steps {
@@ -144,9 +146,10 @@ select {
 .Input {
   margin-top: 12px;
   flex: 1;
+
   @media (max-width: 760px) {
-      min-width: 300px;
-    }
+    min-width: 300px;
+  }
 
   input {
     width: 100%;
